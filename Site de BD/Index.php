@@ -28,33 +28,27 @@
 
 			<div class="col-lg-4" style="text-align: center;">
 
-				<form action="/~ist425918/php/addCategoria.php" method = "post" style="display: inline-flex;" onsubmit="return check_param_addCategoria()">
+				<form action="/~ist425918/php/addCategoria.php" method = "post" style="display: inline-block;" onsubmit="return check_param_addCategoria()">
+					<input type="text" name="hierarquia_sup" placeholder="Nome da Super-Categoria de Ordem Superior (Opcional) ..." id="hieraquia">
 					<input type="text" id="categoria" name="categoria_name" placeholder="Nome da Super-Categoria a Adicionar...">
 					<button>Enter</button>
 				</form>
 
 				<br>
 
-				<form action="/~ist425918/php/addSubcategoria.php" method = "post" style="display: inline-flex; margin-top: 20px;" onsubmit="return check_param_add_Subcategoria()">
+				<form action="/~ist425918/php/addSubcategoria.php" method = "post" style="display: inline-block; margin-top: 20px;" onsubmit="return check_param_add_Subcategoria()">
+					<input type="text" name="super-cat" placeholder="Nome da Super-Categoria da Categoria-Simples ..." id="super-cat-id">
 					<input type="text" placeholder="Nome da Categoria-Simples a Adicionar..." id="sub_categoria" name="sub_categoria_name">
 					<button>Enter</button>
 				</form>
 
 				<div style="margin-top: 20px;">
 
-					<form>
+					<form style="display: inline-block;">
 						<input type="text" name="ean" placeholder="Insira o EAN do Produto a Alterar:">
-						<button style="background:transparent; border:none; color:transparent;" disabled="true">Enter</button>
-					</form>
-
-					<form action="/php/Remcategoria.php" style="display: inline-flex; margin-top: 20px;">
 						<input type="text" name="sub-categoria" placeholder="Insira a Nova Designação:">
-						<button style="background:transparent; border:none; color:transparent;" disabled="true">Enter</button>
-					</form>
-
-					<div style="text-align: center; margin-right: 70px; margin-top: 10px;">
 						<button>Enter</button>
-					</div>
+					</form>
 
 					<div>
 						<div style="border: solid; border-color: black; background-color: red; margin-top: 148px; margin-right: 30px; display: none;" id="cai_temp_bad">
@@ -99,7 +93,7 @@
 			</div>
 
 			<div class="col-lg-4">
-				<form action="/php/Remcategoria.php" style="display: inline-flex;">
+				<form action="/php/Remcategoria.php" style="display: inline-block;">
 					<input type="text" id="campo1" name="categoria" placeholder="Insira o EAN do Produto:">
 					<br>
 					<input type="text" id="campo2" name="sub-categoria" placeholder="Insira a Designação do Produto:">

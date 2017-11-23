@@ -1,8 +1,8 @@
 <?php
 	include("Config.php");
 
-	if(!isset($_POST['sub_categoria_name'])){
-		echo "Missing Sub-Categoria";
+	if(!isset($_POST['sub_categoria_name']) || !isset($_POST['super-cat'])){
+		echo "Missing Sub-Categoria or Super Categoria da Categoria Simples";
 		die();
 	}
 
@@ -27,6 +27,17 @@
 	catch(PDOException $e){
 		handle_sql_errors($e->getMessage());
 	}
+
+	try{
+	    $prepared = $db->prepare("INSERT INTO public.constituida (snome, cnome) VALUES (:super, :sub);");
+
+	    $prepared->bindParam(':super', $_POST['super-cat'], PDO::PARAM_STR);
+	    $prepared->bindParam(':sub', $_POST['sub_categoria_name'], PDO::PARAM_STR);
+
+	    $prepared->execute();
+    }catch (PDOException $e){
+	    handle_sql_errors($e->getMessage());
+    }
 
 	function handle_sql_errors($error_message)
 	{

@@ -1,11 +1,10 @@
 CREATE TABLE fornecedor(
 	nif numeric(9) PRIMARY KEY,
 	nome varchar(64) NOT NULL,
-	CONSTRAINT nif_tamanho CHECK (nif >= 100000000),
-	CONSTRAINT empty_strings CHECK (nome != '')); 
+	CONSTRAINT nif_tamanho CHECK (nif >= 100000000)); 
 
 CREATE TABLE categoria(
-	nome varchar(64) PRIMARY KEY CHECK(nome != '')); 
+	nome varchar(64) PRIMARY KEY); 
 
 CREATE TABLE produto(
 	ean numeric(13) PRIMARY KEY,
@@ -14,39 +13,42 @@ CREATE TABLE produto(
 	tempo date NOT NULL,
 	nome varchar(64) NOT NULL REFERENCES categoria(nome),
 	CONSTRAINT ean_tamanho CHECK (ean >= 1000000000000),
-	CONSTRAINT nif_tamanho CHECK (nif >= 100000000),
-	CONSTRAINT empty_strings CHECK (design != '' AND nome != '')); 
+	CONSTRAINT nif_tamanho CHECK (nif >= 100000000)); 
 
-CREATE TABLE CategoriaSimples(
-	nome varchar(64) PRIMARY KEY REFERENCES categoria(nome),
-	CONSTRAINT empty_strings CHECK (nome != ''));
+CREATE TABLE categoriasimples(
+	nome varchar(64) PRIMARY KEY REFERENCES categoria(nome));
 
-CREATE TABLE SuperCategoria(
-	nome varchar(64) PRIMARY KEY REFERENCES categoria(nome),
-	CONSTRAINT empty_strings CHECK (nome != ''));
+CREATE TABLE supercategoria(
+	nome varchar(64) PRIMARY KEY REFERENCES categoria(nome));
 
-CREATE FUNCTION check_categoria_type() RETURNS trigger AS $check_categoria_type$
+CREATE FUNCTION check_categoria_type_sup() RETURNS trigger AS $check_categoria_type_sup$
 	BEGIN
-		IF nome FROM CategoriaSimples WHERE (NEW.nome = CategoriaSimples.nome) IS NOT NULL THEN
-			RAISE EXCEPTION 'Uma categoria nao pode ser super e simples ao mesmo tempo!';
-		END IF;
-		IF nome FROM SuperCategoria WHERE (NEW.nome = SuperCategoria.nome) IS NOT NULL THEN
+		IF nome FROM categoriasimples WHERE (NEW.nome = CategoriaSimples.nome) IS NOT NULL THEN
 			RAISE EXCEPTION 'Uma categoria nao pode ser super e simples ao mesmo tempo!';
 		END IF;
 
 		RETURN NEW;
 	END;
-$check_categoria_type$ LANGUAGE plpgsql;
+$check_categoria_type_sup$ LANGUAGE plpgsql;
 
-CREATE TRIGGER check_categoria_type BEFORE INSERT OR UPDATE ON CategoriaSimples FOR EACH ROW EXECUTE PROCEDURE check_categoria_type();
-CREATE TRIGGER check_categoria_type BEFORE INSERT OR UPDATE ON SuperCategoria FOR EACH ROW EXECUTE PROCEDURE check_categoria_type();
+CREATE TRIGGER check_categoria_type BEFORE INSERT OR UPDATE ON supercategoria FOR EACH ROW EXECUTE PROCEDURE check_categoria_type();
 
+CREATE FUNCTION check_categoria_type_simp() RETURNS trigger AS $check_categoria_type_simp$
+	BEGIN
+		IF nome FROM supercategoria WHERE (NEW.nome = SuperCategoria.nome) IS NOT NULL THEN
+			RAISE EXCEPTION 'Uma categoria nao pode ser simples e super ao mesmo tempo!';
+		END IF;
+
+		RETURN NEW;
+	END;
+$check_categoria_type_simp$ LANGUAGE plpgsql;
+
+CREATE TRIGGER check_categoria_type BEFORE INSERT OR UPDATE ON categoriasimples FOR EACH ROW EXECUTE PROCEDURE check_categoria_type();
 
 CREATE TABLE constituida(
 	snome varchar(64) REFERENCES SuperCategoria(nome),
 	cnome varchar(64) REFERENCES categoria(nome),
-	PRIMARY KEY (snome, cnome),
-	CONSTRAINT empty_strings CHECK (snome != '' AND cnome != ''));
+	PRIMARY KEY (snome, cnome));
 
 CREATE FUNCTION categoria_verify() RETURNS trigger AS $categoria_verify$
 	BEGIN
@@ -73,7 +75,7 @@ CREATE TABLE corredor(
 
 CREATE TABLE prateleira(
 	nro integer REFERENCES corredor(nro),
-	lado varchar(10) NOT NULL CHECK (lado != ''),
+	lado varchar(10) NOT NULL,
 	altura double precision NOT NULL CHECK (altura >= 0),
 	PRIMARY KEY(nro, lado, altura));
 
@@ -91,8 +93,7 @@ CREATE TABLE planograma(
 CREATE TABLE evento_reposicao(
 	operador varchar(64) NOT NULL,
 	instante date NOT NULL,
-	PRIMARY KEY(operador, instante),
-	CONSTRAINT empty_strings CHECK (operador != ''));
+	PRIMARY KEY(operador, instante));
 
 CREATE FUNCTION date_verify() RETURNS trigger AS $date_verify$
 	BEGIN
@@ -108,11 +109,11 @@ CREATE TRIGGER date_verify BEFORE INSERT OR UPDATE ON evento_reposicao
 	FOR EACH ROW EXECUTE PROCEDURE date_verify();
 
 CREATE TABLE reposicao(
-	operador varchar(64) NOT NULL CHECK(operador != ''),
+	operador varchar(64) NOT NULL,
 	instante date NOT NULL,
 	ean numeric(13) NOT NULL,
 	nro integer NOT NULL,
-	lado varchar(10) NOT NULL CHECK (lado != ''),
+	lado varchar(10) NOT NULL,
 	altura double precision NOT NULL,
 	unidades integer CHECK (unidades >= 0),
 	FOREIGN KEY (operador, instante) REFERENCES evento_reposicao(operador, instante),

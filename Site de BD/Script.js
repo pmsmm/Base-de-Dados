@@ -13,6 +13,10 @@ function check_param_addCategoria(){
 		show_fail();
 		return false;
 	}
+	else if ($("#hierarquia") != null && $("#hierarquia") != '') {
+		$("#categoria").val() = $("#categoria").val().toLowerCase();
+		$("#hierarquia").val() = $("#hierarquia").val().toLowerCase();
+	}
 
 	$("#categoria").val() = $("#categoria").val().toLowerCase();
 	return true;
@@ -27,7 +31,16 @@ function check_param_add_Subcategoria() {
 		show_fail();
 		return false;
 	}
+	else if ($("#sup-cat-id") == null) {
+		show_fail();
+		return false;
+	}
+	else if ($("#sup-cat-id") == '') {
+		show_fail();
+		return false;
+	}
 
+	$("#sup-cat-id").val() = $("#sup-cat-id").val().toLowerCase();
 	$("#sub_categoria").val() = $("#sub_categoria").val().toLowerCase();
 	return true;
 }
