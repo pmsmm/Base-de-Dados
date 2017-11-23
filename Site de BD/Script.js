@@ -13,9 +13,13 @@ function check_param_addCategoria(){
 		show_fail();
 		return false;
 	}
-	else if ($("#hierarquia") != null && $("#hierarquia") != '') {
-		$("#categoria").val() = $("#categoria").val().toLowerCase();
-		$("#hierarquia").val() = $("#hierarquia").val().toLowerCase();
+	else if ($("#hierarquia") == null || $("#hierarquia") == '') {
+		show_fail();
+		return false;
+	}
+	else if($("#hierarquia") != '' && $("#categoria") != '' && $("#categoria").val() != null && $("#hierarquia") != null){
+		insert_constituida($("#hierarquia").val().toLowerCase(), $("#categoria").val().toLowerCase());
+		return false;
 	}
 
 	$("#categoria").val() = $("#categoria").val().toLowerCase();
@@ -85,4 +89,13 @@ function show_fail(){
 	setTimeout(function(){
 		$("#cai_temp_bad").hide();
 	}, 2000);
+}
+
+function insert_constituida(super, sub){
+	$.ajax({  
+    type: 'POST',  
+    url: '/~ist425918/php/constituida_ins.php', 
+    data: { hierarquia_sup: this.super, categoria_name: this.sub },
+    success: 
+	});
 }
