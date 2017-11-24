@@ -7,17 +7,6 @@
 	}
 
 	try{
-		$prepared = $db->prepare("INSERT INTO public.supercategoria (nome) WHERE nome = (:categoria_simp);");
-	
-		$prepared->bindParam(':categoria_simp', $_POST['rem_cat_simples'], PDO::PARAM_STR);
-	
-		$prepared->execute();
-	}
-	catch(PDOException $e){
-		handle_sql_errors($e->getMessage());
-	}
-
-	try{
 		$prepared = $db->prepare("DELETE FROM public.categoria (nome) WHERE nome = (:categoria_simp);");
 	
 		$prepared->bindParam(':categoria_simp', $_POST['rem_cat_simples'], PDO::PARAM_STR);

@@ -7,17 +7,6 @@
 	}
 
 	try{
-		$prepared = $db->prepare("DELETE FROM public.supercategoria (nome) WHERE nome = (:categoria_rem);");
-	
-		$prepared->bindParam(':categoria_rem', $_POST['rem_cat'], PDO::PARAM_STR);
-	
-		$prepared->execute();
-	}
-	catch(PDOException $e){
-		handle_sql_errors($e->getMessage());
-	}
-
-	try{
 		$prepared = $db->prepare("DELETE FROM public.categoria (nome) WHERE nome = (:categoria_rem);");
 	
 		$prepared->bindParam(':categoria_rem', $_POST['rem_cat'], PDO::PARAM_STR);
