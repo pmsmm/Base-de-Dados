@@ -29,6 +29,8 @@
     function handle_sql_errors($error_message)
     {
         echo $error_message;
+        echo $_POST['hierarquia_sup'];
+        echo $_POST['categoria_name'];
         echo '<form action="/~ist425918/Index.php">
                     <input type="submit" value="Home" />
                     </form>';

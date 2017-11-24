@@ -90,12 +90,3 @@ function show_fail(){
 		$("#cai_temp_bad").hide();
 	}, 2000);
 }
-
-function insert_constituida(super, sub){
-	$.ajax({  
-    type: 'POST',  
-    url: '/~ist425918/php/constituida_ins.php', 
-    data: { hierarquia_sup: this.super, categoria_name: this.sub },
-    success: 
-	});
-}
