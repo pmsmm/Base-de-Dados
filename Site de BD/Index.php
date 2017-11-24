@@ -29,12 +29,17 @@
 			<div class="col-lg-4" style="text-align: center;">
 
 				<form action="/~ist425918/php/addCategoria.php" method = "post" style="display: inline-block;" onsubmit="return check_param_addCategoria()">
-					<input type="text" name="hierarquia_sup" placeholder="Nome da Super-Categoria de Ordem Superior (Opcional) ..." id="hieraquia">
 					<input type="text" id="categoria" name="categoria_name" placeholder="Nome da Super-Categoria a Adicionar...">
 					<button>Enter</button>
 				</form>
 
 				<br>
+
+				<form action="/~ist425918/php/constituida_ins.php" method = "post" style="display: inline-block;" onsubmit="return check_param_addConstituida()">
+					<input type="text" name="hierarquia_sup" placeholder="Nome da Super-Categoria de Ordem Superior (Opcional) ..." id="hierarquia">
+					<input type="text" name="constituida" placeholder="Nome da Super-Categoria Filha ..." id="parametro">
+					<button>Enter</button>
+				</form>
 
 				<form action="/~ist425918/php/addSubcategoria.php" method = "post" style="display: inline-block; margin-top: 20px;" onsubmit="return check_param_add_Subcategoria()">
 					<input type="text" name="super-cat" placeholder="Nome da Super-Categoria da Categoria-Simples ..." id="super-cat-id">

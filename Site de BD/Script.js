@@ -26,6 +26,30 @@ function check_param_addCategoria(){
 	return true;
 }
 
+function check_param_addConstituida(){
+	if($("#hierarquia").val() == ""){
+		show_fail();
+		return false;
+	}
+	else if($("#hierarquia").val() == null){
+		show_fail();
+		return false;
+	}
+	else if($("#parametro").val() == ""){
+		show_fail();
+		return false;
+	}
+	else if($("#parametro").val() == null){
+		show_fail();
+		return false;
+	}
+
+	$("#parametro").val()=$("#parametro").val().toLowerCase();	
+	$("#hierarquia").val()=$("#hierarquia").val().toLowerCase();
+	return true;
+}
+
+
 function check_param_add_Subcategoria() {
 	if ($("#sub_categoria").val() == "") {
 		show_fail();

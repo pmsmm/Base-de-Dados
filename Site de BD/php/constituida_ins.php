@@ -7,7 +7,7 @@
  */
     include("Config.php");
 
-    if(!isset($_POST['hierarquia_sup']) || !isset($_POST['categoria_name'])){
+    if(!isset($_POST['hierarquia_sup']) || !isset($_POST['constituida'])){
         echo "Missing Data!";
         die();
     }
@@ -17,7 +17,7 @@
             $prepared = $db->prepare("INSERT INTO public.constituida VALUES (:sup_categoria, :sub_categoria);");
 
             $prepared->bindParam(':sup_categoria', $_POST['hierarquia_sup'], PDO::PARAM_STR);
-            $prepared->bindParam(':sub_categoria', $_POST['categoria_name'], PDO::PARAM_STR);
+            $prepared->bindParam(':sub_categoria', $_POST['constituida'], PDO::PARAM_STR);
 
             $prepared->execute();
         }
@@ -29,8 +29,6 @@
     function handle_sql_errors($error_message)
     {
         echo $error_message;
-        echo $_POST['hierarquia_sup'];
-        echo $_POST['categoria_name'];
         echo '<form action="/~ist425918/Index.php">
                     <input type="submit" value="Home" />
                     </form>';
