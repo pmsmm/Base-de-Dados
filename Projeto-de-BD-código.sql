@@ -46,8 +46,8 @@ $check_categoria_type_simp$ LANGUAGE plpgsql;
 CREATE TRIGGER check_categoria_type BEFORE INSERT OR UPDATE ON categoriasimples FOR EACH ROW EXECUTE PROCEDURE check_categoria_type();
 
 CREATE TABLE constituida(
-	snome varchar(64) REFERENCES SuperCategoria(nome),
-	cnome varchar(64) REFERENCES categoria(nome),
+	super_categoria varchar(64) REFERENCES SuperCategoria(nome),
+	categoria varchar(64) REFERENCES categoria(nome),
 	PRIMARY KEY (snome, cnome));
 
 CREATE FUNCTION categoria_verify() RETURNS trigger AS $categoria_verify$

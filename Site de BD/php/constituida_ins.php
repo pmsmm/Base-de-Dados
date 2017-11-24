@@ -14,7 +14,7 @@
 
     if (isset($_POST['hierarquia_sup']) && $_POST['hierarquia_sup'] != '') {
         try{
-            $prepared = $db->prepare("INSERT INTO public.constituida (snome, cnome) VALUES (:sup_categoria, :sub_categoria);");
+            $prepared = $db->prepare("INSERT INTO public.constituida VALUES (:sup_categoria, :sub_categoria);");
 
             $prepared->bindParam(':sup_categoria', $_POST['hierarquia_sup'], PDO::PARAM_STR);
             $prepared->bindParam(':sub_categoria', $_POST['categoria_name'], PDO::PARAM_STR);
