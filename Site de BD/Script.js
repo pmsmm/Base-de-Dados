@@ -101,6 +101,21 @@ function check_param_rem_Simpcategoria() {
 	return true;
 }
 
+function check_param_alter_design() {
+	if ($("#ean_id") == null || $("#ean_id") == '') {
+		show_fail();
+		return false;
+	}
+	if ($("#design_id") == null || $("#design_id") == "") {
+		show_fail();
+		return false;
+	}
+
+	$("#ean_id").val() = $("#ean_id").val().toLowerCase();
+	$("#design_id").val() = $("#design_id").val().toLowerCase();
+	return true;
+}
+
 function show_win(){
 	$("#cai_temp_good").hide().show();
 	setTimeout(function(){

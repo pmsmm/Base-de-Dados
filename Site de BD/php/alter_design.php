@@ -18,10 +18,10 @@
     }
 
     try{
-        $prepared=$db->prepare("UPDATE public.produto SET design = (:designacao) WHERE ean = (:ean)");
+        $prepared=$db->prepare("UPDATE public.produto SET design = (:designacao) WHERE ean = (:ean);");
 
-        $prepared->bindParam(':design', $_POST['ean_design'], PDO::PARAM_STR);
         $prepared->bindParam(':ean', $_POST['ean'], PDO::PARAM_LOB);
+        $prepared->bindParam(':design', $_POST['ean_design'], PDO::PARAM_STR);
 
         $prepared->execute();
     }

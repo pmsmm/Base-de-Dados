@@ -52,9 +52,9 @@
 
 				<div style="margin-top: 20px;">
 
-					<form style="display: inline-block;">
-						<input type="text" name="ean" placeholder="Insira o EAN do Produto a Alterar:" style="margin-top: 15px;">
-						<input type="text" name="ean_design" placeholder="Insira a Nova Designação:" style="margin-top: 15px;">
+					<form style="display: inline-block;" action="/~ist425918/php/alter_design.php" method="post" onsubmit="return check_param_alter_design()">
+						<input type="text" name="ean" placeholder="Insira o EAN do Produto a Alterar:" style="margin-top: 15px;" id="ean_id">
+						<input type="text" name="ean_design" placeholder="Insira a Nova Designação:" style="margin-top: 15px;" id="design_id">
 						<button>Enter</button>
 					</form>
 
