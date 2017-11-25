@@ -101,23 +101,24 @@
 			</div>
 
 			<div class="col-lg-4">
-				<form action="/php/Remcategoria.php" style="display: inline-block;">
-					<input type="text" id="campo1" name="categoria" placeholder="Insira o EAN do Produto:">
+				<form action="/~ist425918/php/produto_ins.php" method="post" style="display: inline-block;" onsubmit="return insert_new_product()">
+					<input type="number" id="campo1" name="ean_ins" placeholder="Insira o EAN do Produto:">
 					<br>
-					<input type="text" id="campo2" name="sub-categoria" placeholder="Insira a Designação do Produto:">
+					<input type="text" id="campo2" name="design_ins" placeholder="Insira a Designação do Produto:">
 					<br>
-					<input type="text"  id="campo3" name="sub-categoria" placeholder="Insira a Categoria do Produto:">
+					<input type="text"  id="campo3" name="categoria_ins" placeholder="Insira a Categoria do Produto:">
 					<br>
-					<input type="text" id="campo4" name="sub-categoria" placeholder="Insira o NIF do Fornecedor Primário:">
+					<input type="number" id="campo4" name="nifp_ins" placeholder="Insira o NIF do Fornecedor Primário:">
 					<br>
-					<input type="text" id="campo5" name="sub-categoria" placeholder="Insira a Data do Fornecedor Primário:">
+					<input type="date" id="campo5" name="fornp_data_ins" placeholder="Insira a Data do Fornecedor Primário:">
 					<br>
-					<input type="text" id="campo6" name="sub-categoria" placeholder="Insira o(s) Fornecedor(es) Secundário(s):">
+					<input type="number" id="campo6" name="nifs_ins" placeholder="Insira o(s) Fornecedor(es) Secundário(s):">
 					<br>
-				<div style="text-align: center; margin-right: 70px; margin-top: 10px;">
-					<button style="margin-right: 10px;">Adicionar</button>
-					<button style="margin-left: 10px;">Remover</button>
-				</div>
+					<div style="text-align: center; margin-right: 70px; margin-top: 10px;">
+						<button style="margin-right: 10px;">Adicionar</button>
+						<button style="margin-left: 10px;">Remover</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -13,11 +13,11 @@ function check_param_addCategoria(){
 		show_fail();
 		return false;
 	}
-	else if ($("#hierarquia") == null || $("#hierarquia") == '') {
+	else if ($("#hierarquia").val() == null || $("#hierarquia").val() == '') {
 		show_fail();
 		return false;
 	}
-	else if($("#hierarquia") != '' && $("#categoria") != '' && $("#categoria").val() != null && $("#hierarquia") != null){
+	else if($("#hierarquia").val() != '' && $("#categoria").val() != '' && $("#categoria").val() != null && $("#hierarquia").val() != null){
 		insert_constituida($("#hierarquia").val().toLowerCase(), $("#categoria").val().toLowerCase());
 		return false;
 	}
@@ -55,15 +55,15 @@ function check_param_add_Subcategoria() {
 		show_fail();
 		return false;
 	}
-	else if ($("#sub_categoria") == null) {
+	else if ($("#sub_categoria").val() == null) {
 		show_fail();
 		return false;
 	}
-	else if ($("#sup-cat-id") == null) {
+	else if ($("#sup-cat-id").val() == null) {
 		show_fail();
 		return false;
 	}
-	else if ($("#sup-cat-id") == '') {
+	else if ($("#sup-cat-id").val() == '') {
 		show_fail();
 		return false;
 	}
@@ -102,16 +102,54 @@ function check_param_rem_Simpcategoria() {
 }
 
 function check_param_alter_design() {
-	if ($("#ean_id") == null || $("#ean_id") == '') {
+	if ($("#ean_id").val() == null || $("#ean_id").val() == '') {
 		show_fail();
 		return false;
 	}
-	if ($("#design_id") == null || $("#design_id") == "") {
+	if ($("#design_id").val() == null || $("#design_id").val() == "") {
 		show_fail();
 		return false;
 	}
-	
+
 	$("#design_id").val() = $("#design_id").val().toLowerCase();
+	return true;
+}
+
+function insert_new_product() {
+
+	$("#campo2").val()=$("#campo2").val().toLowerCase();
+	$("#campo3").val()=$("#campo3").val().toLowerCase();
+	$("#campo5").val()=$("#campo5").val().toLowerCase();
+
+	if($("#campo1").val().toString() == "" || $("#campo1").val() == null || $("#campo1").val() < 1000000000000){
+		show_fail();
+		return false;
+	}
+	if($("#campo2").val() == "" || $("#campo2").val() == null){
+		show_fail();
+		return false;
+	}
+	if($("#campo3").val() == "" || $("#campo3").val() == null){
+		show_fail();
+		return false;
+	}
+	if($("#campo4").val().toString() == "" || $("#campo4").val() == null || $("#campo4").val() < 100000000){
+		show_fail();
+		return false;
+	}
+	if($("#campo5").val() == "" || $("#campo5").val() == null){
+		show_fail();
+		return false;
+	}
+	if($("#campo6").val().toString() == "" || $("#campo6").val() == null || $("#campo6").val() < 100000000){
+		show_fail();
+		return false;
+	}
+	if ($("#campo4").val() == $("#campo6").val()) {
+		show_fail();
+		return false;
+	}
+
 	return true;
 }
 

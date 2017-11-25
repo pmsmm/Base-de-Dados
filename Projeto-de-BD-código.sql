@@ -11,9 +11,7 @@ CREATE TABLE produto(
 	design varchar(128) NOT NULL,
 	nif numeric(9) REFERENCES fornecedor(nif),
 	tempo date NOT NULL,
-	nome varchar(64) NOT NULL REFERENCES categoria(nome),
-	CONSTRAINT ean_tamanho CHECK (ean >= 1000000000000),
-	CONSTRAINT nif_tamanho CHECK (nif >= 100000000)); 
+	nome varchar(64) NOT NULL REFERENCES categoria(nome)); 
 
 CREATE TABLE categoriasimples(
 	nome varchar(64) PRIMARY KEY REFERENCES categoria(nome) ON DELETE CASCADE);
@@ -76,14 +74,14 @@ CREATE TABLE corredor(
 CREATE TABLE prateleira(
 	nro integer REFERENCES corredor(nro),
 	lado varchar(10) NOT NULL,
-	altura double precision NOT NULL CHECK (altura >= 0),
+	altura varchar(15) NOT NULL,
 	PRIMARY KEY(nro, lado, altura));
 
 CREATE TABLE planograma(
 	ean numeric(13) REFERENCES produto(ean),
 	nro integer NOT NULL,
 	lado varchar(10) NOT NULL CHECK (lado != ''),
-	altura double precision CHECK (altura >=0),
+	altura varchar(15),
 	faces integer NOT NULL CHECK (faces >= 0),
 	unidades integer NOT NULL CHECK (unidades >= 0),
 	loc integer NOT NULL CHECK (loc >= 0),
@@ -114,7 +112,7 @@ CREATE TABLE reposicao(
 	ean numeric(13) NOT NULL,
 	nro integer NOT NULL,
 	lado varchar(10) NOT NULL,
-	altura double precision NOT NULL,
+	altura varchar(15) NOT NULL,
 	unidades integer CHECK (unidades >= 0),
 	FOREIGN KEY (operador, instante) REFERENCES evento_reposicao(operador, instante),
 	FOREIGN KEY (ean, nro, lado, altura) REFERENCES planograma(ean, nro, lado, altura));
