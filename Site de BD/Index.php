@@ -29,29 +29,32 @@
 			<div class="col-lg-4" style="text-align: center;">
 
 				<form action="/~ist425918/php/addCategoria.php" method = "post" style="display: inline-block;" onsubmit="return check_param_addCategoria()">
-					<input type="text" id="categoria" name="categoria_name" placeholder="Nome da Super-Categoria a Adicionar...">
+					<input type="text" id="categoria" name="categoria_name" placeholder="Nome da Super-Categoria a Adicionar..." style="width: 270px;">
 					<button>Enter</button>
 				</form>
 
 				<br>
 
-				<form action="/~ist425918/php/constituida_ins.php" method = "post" style="display: inline-block;" onsubmit="return check_param_addConstituida()">
+				<form action="/~ist425918/php/addSubcategoria.php" method = "post" style="display: inline-block; margin-top: 15px;" onsubmit="return check_param_add_Subcategoria()">
+					<input type="text" placeholder="Nome da Categoria-Simples a Adicionar..." id="sub_categoria" name="sub_categoria_name" style="width: 270px;">
+					<button>Enter</button>
+				</form>
+
+				<br>
+
+				<form action="/~ist425918/php/constituida_ins.php" method = "post" style="display: inline-block; margin-top: 15px;" onsubmit="return check_param_addConstituida()">
 					<input type="text" name="hierarquia_sup" placeholder="Nome da Super-Categoria de Ordem Superior (Opcional) ..." id="hierarquia">
 					<input type="text" name="constituida" placeholder="Nome da Super-Categoria Filha ..." id="parametro">
 					<button>Enter</button>
 				</form>
 
-				<form action="/~ist425918/php/addSubcategoria.php" method = "post" style="display: inline-block; margin-top: 20px;" onsubmit="return check_param_add_Subcategoria()">
-					<input type="text" name="super-cat" placeholder="Nome da Super-Categoria da Categoria-Simples ..." id="super-cat-id">
-					<input type="text" placeholder="Nome da Categoria-Simples a Adicionar..." id="sub_categoria" name="sub_categoria_name">
-					<button>Enter</button>
-				</form>
+				<br>
 
 				<div style="margin-top: 20px;">
 
 					<form style="display: inline-block;">
-						<input type="text" name="ean" placeholder="Insira o EAN do Produto a Alterar:">
-						<input type="text" name="sub-categoria" placeholder="Insira a Nova Designação:">
+						<input type="text" name="ean" placeholder="Insira o EAN do Produto a Alterar:" style="margin-top: 15px;">
+						<input type="text" name="sub-categoria" placeholder="Insira a Nova Designação:" style="margin-top: 15px;">
 						<button>Enter</button>
 					</form>
 
@@ -67,14 +70,14 @@
 			<div class="col-lg-4" style="text-align: center;">
 				<div>
 
-					<form action="/php/rem_sup_cat.php" method="post" style="display: inline-flex;" onsubmit="return check_param_rem_Supcategoria()">					
+					<form action="/~ist425918/php/rem_sup_cat.php" method="post" style="display: inline-flex;" onsubmit="return check_param_rem_Supcategoria()">					
 						<input type="text" name="rem_cat" id="cat_rem" placeholder="Nome da Super-Categoria a Remover...">
 						<button>Enter</button>
 					</form>
 
 					<br>
 
-					<form action="/php/rem_cat_simp.php" style="display: inline-flex; margin-top: 20px;" method="post" onsubmit="return check_param_rem_Simpcategoria()">
+					<form action="/~ist425918/php/rem_cat_simp.php" style="display: inline-flex; margin-top: 20px;" method="post" onsubmit="return check_param_rem_Simpcategoria()">
 						<input type="text" id="rem_cat_simples_id" name="rem_cat_simples" placeholder="Insira o nome da Sub-Categoria a Remover:">
 						<button>Enter</button>
 					</form>
