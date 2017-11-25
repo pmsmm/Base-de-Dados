@@ -21,7 +21,7 @@ CREATE TABLE categoriasimples(
 CREATE TABLE supercategoria(
 	nome varchar(64) PRIMARY KEY REFERENCES categoria(nome) ON DELETE CASCADE);
 
-CREATE FUNCTION check_categoria_type_sup() RETURNS trigger AS $check_categoria_type_sup$
+/*CREATE FUNCTION check_categoria_type_sup() RETURNS trigger AS $check_categoria_type_sup$
 	BEGIN
 		IF nome FROM categoriasimples WHERE (NEW.nome = CategoriaSimples.nome) IS NOT NULL THEN
 			RAISE EXCEPTION 'Uma categoria nao pode ser super e simples ao mesmo tempo!';
@@ -43,14 +43,14 @@ CREATE FUNCTION check_categoria_type_simp() RETURNS trigger AS $check_categoria_
 	END;
 $check_categoria_type_simp$ LANGUAGE plpgsql;
 
-CREATE TRIGGER check_categoria_type_simp BEFORE INSERT OR UPDATE ON categoriasimples FOR EACH ROW EXECUTE PROCEDURE check_categoria_type_simp();
+CREATE TRIGGER check_categoria_type_simp BEFORE INSERT OR UPDATE ON categoriasimples FOR EACH ROW EXECUTE PROCEDURE check_categoria_type_simp();*/
 
 CREATE TABLE constituida(
 	super_categoria varchar(64) REFERENCES SuperCategoria(nome) ON DELETE CASCADE,
 	categoria varchar(64) REFERENCES categoria(nome) ON DELETE CASCADE,
 	PRIMARY KEY (super_categoria, categoria));
 
-CREATE FUNCTION categoria_verify() RETURNS trigger AS $categoria_verify$
+/*CREATE FUNCTION categoria_verify() RETURNS trigger AS $categoria_verify$
 	BEGIN
 		IF NEW.super_categoria = NEW.categoria THEN
 			RAISE EXCEPTION 'Uma SuperCategoria nao pode ser constituida por si propria';
@@ -67,7 +67,7 @@ CREATE FUNCTION categoria_verify() RETURNS trigger AS $categoria_verify$
 $categoria_verify$ LANGUAGE plpgsql; 
 
 CREATE TRIGGER categoria_verify BEFORE INSERT OR UPDATE ON constituida
-    FOR EACH ROW EXECUTE PROCEDURE categoria_verify();
+    FOR EACH ROW EXECUTE PROCEDURE categoria_verify();*/
 
 CREATE TABLE corredor(
 	nro integer PRIMARY KEY,
@@ -95,7 +95,7 @@ CREATE TABLE evento_reposicao(
 	instante date NOT NULL,
 	PRIMARY KEY(operador, instante));
 
-CREATE FUNCTION date_verify() RETURNS trigger AS $date_verify$
+/*CREATE FUNCTION date_verify() RETURNS trigger AS $date_verify$
 	BEGIN
 		IF instante FROM evento_reposicao WHERE (NEW.instante::date <= evento_reposicao.instante::date) IS NOT NULL THEN
 			RAISE EXCEPTION 'O evento de reposicao que esta a tentar inserir e inferior ao evento de reposicao anterior o que e impossivel!';
@@ -106,7 +106,7 @@ CREATE FUNCTION date_verify() RETURNS trigger AS $date_verify$
 $date_verify$ LANGUAGE plpgsql;
 
 CREATE TRIGGER date_verify BEFORE INSERT OR UPDATE ON evento_reposicao
-	FOR EACH ROW EXECUTE PROCEDURE date_verify();
+	FOR EACH ROW EXECUTE PROCEDURE date_verify();*/
 
 CREATE TABLE reposicao(
 	operador varchar(64) NOT NULL,
@@ -124,7 +124,7 @@ CREATE TABLE fornecedor_sec(
 	ean numeric(13) REFERENCES produto(ean),
 	PRIMARY KEY (nif, ean));
 
-CREATE FUNCTION fornecedor_sec_verify() RETURNS trigger AS $fornecedor_sec_verify$
+/*CREATE FUNCTION fornecedor_sec_verify() RETURNS trigger AS $fornecedor_sec_verify$
 	BEGIN
 		IF NEW.nif IS NULL THEN
 			RAISE EXCEPTION '% Nao pode ser NULL', NEW.nif;
@@ -143,5 +143,5 @@ CREATE FUNCTION fornecedor_sec_verify() RETURNS trigger AS $fornecedor_sec_verif
 $fornecedor_sec_verify$ LANGUAGE plpgsql;
 
 CREATE TRIGGER fornecedor_sec_verify BEFORE INSERT OR UPDATE ON fornecedor_sec
-    FOR EACH ROW EXECUTE PROCEDURE fornecedor_sec_verify();
+    FOR EACH ROW EXECUTE PROCEDURE fornecedor_sec_verify();*/
 

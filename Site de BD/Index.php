@@ -54,7 +54,7 @@
 
 					<form style="display: inline-block;">
 						<input type="text" name="ean" placeholder="Insira o EAN do Produto a Alterar:" style="margin-top: 15px;">
-						<input type="text" name="sub-categoria" placeholder="Insira a Nova Designação:" style="margin-top: 15px;">
+						<input type="text" name="ean_design" placeholder="Insira a Nova Designação:" style="margin-top: 15px;">
 						<button>Enter</button>
 					</form>
 
