@@ -110,8 +110,7 @@ function check_param_alter_design() {
 		show_fail();
 		return false;
 	}
-
-	$("#ean_id").val() = $("#ean_id").val().toLowerCase();
+	
 	$("#design_id").val() = $("#design_id").val().toLowerCase();
 	return true;
 }

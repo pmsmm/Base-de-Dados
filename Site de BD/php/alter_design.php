@@ -20,8 +20,8 @@
     try{
         $prepared=$db->prepare("UPDATE public.produto SET design = (:designacao) WHERE ean = (:ean);");
 
-        $prepared->bindParam(':ean', $_POST['ean'], PDO::PARAM_LOB);
-        $prepared->bindParam(':design', $_POST['ean_design'], PDO::PARAM_STR);
+        $prepared->bindParam(':ean', $_POST['ean'], PDO::PARAM_INT);
+        $prepared->bindParam(':designacao', $_POST['ean_design'], PDO::PARAM_STR);
 
         $prepared->execute();
     }
@@ -37,3 +37,7 @@
                     </form>';
         die();
     }
+
+    header('Location: /~ist425918/Index.php');
+    close();
+    die();
