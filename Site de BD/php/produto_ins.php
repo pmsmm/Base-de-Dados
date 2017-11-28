@@ -38,13 +38,14 @@
     }
 
     try{
-        $prepared = $db->prepare("INSERT INTO public.produto VALUES (:ean, :designacao, :nif_primario, :data_primario, :categoria);");
+        $prepared = $db->prepare("INSERT INTO public.categoria (nome) VALUES (:categoria_in);INSERT INTO public.fornecedor_sec VALUES (:nif_sec, :ean_sec);INSERT INTO public.produto VALUES (:ean, :designacao, :nif_primario, :data_primario, :categoria);");
 
-        $statement = $db->prepare("INSERT INTO public.fornecedor_sec VALUES (:nif_sec, :ean_sec);");
+        //$statement = $db->prepare("INSERT INTO public.fornecedor_sec VALUES (:nif_sec, :ean_sec);");
+        //$integrity = $db->prepare("INSERT INTO public.categoria (nome) VALUES (:categoria);");
 
-        $statement->bindParam(':nif_sec', $_POST['nifs_ins'], PDO::PARAM_INT);
-        $statement->bindParam(':ean_sec', $_POST['ean_ins'], PDO::PARAM_INT);
-
+        $prepared->bindParam(':nif_sec', $_POST['nifs_ins'], PDO::PARAM_INT);
+        $prepared->bindParam(':ean_sec', $_POST['ean_ins'], PDO::PARAM_INT);
+        $prepared->bindParam(':categoria_in', $_POST['categoria_name'], PDO::PARAM_STR);
         $prepared->bindParam(':ean', $_POST['ean_ins'], PDO::PARAM_INT);
         $prepared->bindParam(':designacao', $_POST['design_ins'], PDO::PARAM_STR);
         $prepared->bindParam(':categoria', $_POST['categoria_ins'], PDO::PARAM_STR);
@@ -52,7 +53,7 @@
         $prepared->bindParam(':data_primario', $_POST['fornp_data_ins'], PDO::PARAM_STR);
 
         $prepared->execute();
-        $statement->execute();
+
     }
     catch (PDOException $e){
         handle_sql_errors($e->getMessage());
