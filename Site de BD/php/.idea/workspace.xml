@@ -25,7 +25,7 @@
       <file leaf-file-name="produto_ins.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/produto_ins.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="861">
               <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
                 <marker date="1511885240735" expanded="true" signature="825:921" ph="INSERT INTO public.produto... " />
@@ -44,14 +44,14 @@
       <file leaf-file-name="listar_repo.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/listar_repo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+            <state relative-caret-position="231">
+              <caret line="16" column="94" lean-forward="false" selection-start-line="16" selection-start-column="94" selection-end-line="16" selection-end-column="94" />
               <folding>
-                <marker date="1511888684692" expanded="true" signature="244:284" ph="SELECT opera... " />
-                <marker date="1511888684692" expanded="true" signature="244:291" ph="SELECT opera... public" />
-                <marker date="1511888684692" expanded="true" signature="244:349" ph="SELECT opera... evento_reposicao" />
-                <marker date="1511888684692" expanded="true" signature="244:940" ph="SELECT opera... public" />
-                <marker date="1511888684692" expanded="true" signature="1153:1246" ph="..." />
+                <marker date="1511900936674" expanded="true" signature="244:318" ph="SELECT opera... " />
+                <marker date="1511900936674" expanded="true" signature="244:325" ph="SELECT opera... public" />
+                <marker date="1511900936674" expanded="true" signature="244:383" ph="SELECT event... evento_reposicao" />
+                <marker date="1511900936674" expanded="true" signature="244:974" ph="SELECT opera... public" />
+                <marker date="1511900936674" expanded="true" signature="1187:1280" ph="..." />
               </folding>
             </state>
           </provider>
@@ -60,11 +60,11 @@
       <file leaf-file-name="constituida_ins.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/constituida_ins.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="40" selection-end-column="10" />
+            <state relative-caret-position="-13">
+              <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
               <folding>
-                <marker date="1511888331329" expanded="true" signature="371:441" ph="INSERT INTO public.constituida... " />
-                <marker date="1511888331329" expanded="true" signature="908:993" ph="..." />
+                <marker date="1511888804271" expanded="true" signature="371:441" ph="INSERT INTO public.constituida... " />
+                <marker date="1511888804271" expanded="true" signature="907:992" ph="..." />
               </folding>
             </state>
           </provider>
@@ -178,12 +178,12 @@
       <workItem from="1511524091756" duration="2096000" />
       <workItem from="1511542882480" duration="6513000" />
       <workItem from="1511626522223" duration="15559000" />
-      <workItem from="1511879790138" duration="6959000" />
+      <workItem from="1511879790138" duration="8910000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43976000" />
+    <option name="totallyTimeSpent" value="45927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -191,7 +191,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289183" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="5.2083336E-4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -333,17 +333,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1511888331329" expanded="true" signature="371:441" ph="INSERT INTO public.constituida... " />
-            <marker date="1511888331329" expanded="true" signature="908:993" ph="..." />
+            <marker date="1511888804271" expanded="true" signature="371:441" ph="INSERT INTO public.constituida... " />
+            <marker date="1511888804271" expanded="true" signature="907:992" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -420,7 +412,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/produto_ins.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="861">
           <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding>
             <marker date="1511885240735" expanded="true" signature="825:921" ph="INSERT INTO public.produto... " />
@@ -437,25 +429,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/constituida_ins.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="40" selection-end-column="10" />
+        <state relative-caret-position="-13">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
           <folding>
-            <marker date="1511888331329" expanded="true" signature="371:441" ph="INSERT INTO public.constituida... " />
-            <marker date="1511888331329" expanded="true" signature="908:993" ph="..." />
+            <marker date="1511888804271" expanded="true" signature="371:441" ph="INSERT INTO public.constituida... " />
+            <marker date="1511888804271" expanded="true" signature="907:992" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/listar_repo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="53" column="10" lean-forward="true" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="16" column="94" lean-forward="false" selection-start-line="16" selection-start-column="94" selection-end-line="16" selection-end-column="94" />
           <folding>
-            <marker date="1511888684692" expanded="true" signature="244:284" ph="SELECT opera... " />
-            <marker date="1511888684692" expanded="true" signature="244:291" ph="SELECT opera... public" />
-            <marker date="1511888684692" expanded="true" signature="244:349" ph="SELECT opera... evento_reposicao" />
-            <marker date="1511888684692" expanded="true" signature="244:940" ph="SELECT opera... public" />
-            <marker date="1511888684692" expanded="true" signature="1153:1246" ph="..." />
+            <marker date="1511900936674" expanded="true" signature="244:318" ph="SELECT opera... " />
+            <marker date="1511900936674" expanded="true" signature="244:325" ph="SELECT opera... public" />
+            <marker date="1511900936674" expanded="true" signature="244:383" ph="SELECT event... evento_reposicao" />
+            <marker date="1511900936674" expanded="true" signature="244:974" ph="SELECT opera... public" />
+            <marker date="1511900936674" expanded="true" signature="1187:1280" ph="..." />
           </folding>
         </state>
       </provider>

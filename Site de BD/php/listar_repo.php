@@ -14,7 +14,7 @@
     }
 
     try{
-        $prepared = $db->prepare("SELECT operador, instante, unidades FROM public.evento_reposicao, public.reposicao WHERE ean = (:ean_ins)");
+        $prepared = $db->prepare("SELECT evento_reposicao.operador, evento_reposicao.instante, unidades FROM public.evento_reposicao, public.reposicao WHERE ean = (:ean_ins)");
 
         $prepared->bindParam('ean_ins', $_POST['ean'], PDO::PARAM_INT);
 
