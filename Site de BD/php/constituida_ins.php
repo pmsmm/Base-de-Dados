@@ -20,6 +20,7 @@
             $prepared->bindParam(':sub_categoria', $_POST['constituida'], PDO::PARAM_STR);
 
             $prepared->execute();
+
         }
         catch(PDOException $e){
             handle_sql_errors($e->getMessage());
