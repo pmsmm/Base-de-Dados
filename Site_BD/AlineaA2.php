@@ -21,8 +21,9 @@
         $sq3 = "SELECT nome FROM categoria_simples WHERE nome='$categoria_inserir';";
 
         $sq4 = "SELECT nome FROM categoria WHERE nome='$categoria_remover';";
-        $sq5 = "SELECT nome FROM categoria WHERE nome='$sub_categoria_remover';";
-        $sq6 = "SELECT nome FROM categoria_simples WHERE nome='$categoria_remover';";
+        $sq5 = "SELECT nome FROM categoria_simples WHERE nome='$categoria_remover';";
+        $sq6 = "SELECT nome FROM categoria WHERE nome='$sub_categoria_remover';";
+        $sq7 = "SELECT nome FROM categoria_simples WHERE nome='$sub_categoria_remover';";
 
         echo("<p>A insersao comecou</p>");
 
@@ -56,29 +57,36 @@
 
         echo("<p>A remocao comecou</p>");
 
-        IF ($categoria_remover != ''){
-            $result = $db->query($sq4);
+        $result = $db->query($sq4); /*Ve se foi dada categoria e se esta na tabela categoria*/
 
-            IF (iterator_count($result) == 0) {
-            
-                $db->query("INSERT INTO categoria VALUES ('$categoria_inserir');");
-                $db->query("INSERT INTO categoria_simples VALUES ('$categoria_inserir');");
+        IF (iterator_count($result) != 0) {
+            $db->query("UPDATE produto SET categoria = null WHERE categoria='$categoria_remover';");
+            $result = $db->query($sq5); /* Ve se a categoria e categoria simples */
+
+            IF (iterator_count($result) != 0) {
+                $db->query("DELETE FROM categoria_simples WHERE nome='$categoria_remover';");
             }
 
             ELSE {
-                IF ($sub_categoria_inserir != '') {
-                    $result = $db->query($sq2);
-                    IF (iterator_count($result) == 0) {
-                        $result = $db->query($sq3);
-                        IF (iterator_count($result) > 0) {
-                            $db->query("DELETE FROM categoria_simples WHERE nome='$categoria_inserir';");
-                            $db->query("INSERT INTO super_categoria VALUES ('$categoria_inserir');");
-                        }
-                        $db->query("INSERT INTO categoria VALUES ('$sub_categoria_inserir');");
-                        $db->query("INSERT INTO categoria_simples VALUES ('$sub_categoria_inserir');");
-                        $db->query("INSERT INTO constituida(super_categoria, categoria) VALUES ('$categoria_inserir', '$sub_categoria_inserir');");
-                    }
+                $db->query("DELETE FROM super_categoria WHERE nome='$categoria_remover';");
+                $db->query("DELETE FROM constituida WHERE super_categoria='$categoria_remover';");
+            }
+            $db->query("DELETE FROM categoria WHERE nome='$categoria_remover';");
+            $result = $db->query($sq6); /*Ve se foi dada sub categoria e se esta na tabela categoria */
+
+            IF (iterator_count($result) != 0) {
+                $db->query("DELETE FROM constituida WHERE categoria='$sub_categoria_remover';");
+                $db->query("UPDATE produto SET categoria = null WHERE categoria='$sub_categoria_remover';");
+
+                $result = $db->query($sq7); /*Ve se a sub categoria e categoria simples */
+                IF (iterator_count($result) != 0) {
+                    $db->query("DELETE FROM categoria_simples WHERE nome='$sub_categoria_remover';");
                 }
+
+                ELSE {
+                    $db->query("DELETE FROM super_categoria WHERE nome='$sub_categoria_remover';");
+                }
+                $db->query("DELETE FROM categoria WHERE nome='$sub_categoria_remover';");
             }
         }
 
