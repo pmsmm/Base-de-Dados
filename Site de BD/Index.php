@@ -86,7 +86,7 @@
 
 				<div style="margin-top: 20px;">
 
-					<form action="/php/Remcategoria.php" style="display: inline-flex;">					
+					<form action="/~ist425918/php/listar_repo.php" method="post" style="display: inline-flex;">					
 						<input type="text" name="categoria" placeholder="Inserir o Nome do Produto a Listar:">
 						<button>Enter</button>
 					</form>
