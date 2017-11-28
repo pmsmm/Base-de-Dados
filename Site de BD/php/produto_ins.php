@@ -7,32 +7,32 @@
  */
     include("Config.php");
 
-    if(!isset($_POST['ean_ins'])){
+    if(!isset($_POST['ean_ins']) || strcmp($_POST['ean_ins'], '') == 0){
         echo 'EAN de Produto em Falta!';
         die();
     }
 
-    if(!isset($_POST['design_ins'])){
+    if(!isset($_POST['design_ins']) || strcmp($_POST['design_ins'], '') == 0){
         echo 'Designação de Produto em Falta';
         die();
     }
 
-    if(!isset($_POST['categoria_ins'])){
+    if(!isset($_POST['categoria_ins']) || strcmp($_POST['categoria_ins'], '') == 0){
         echo 'Categoria do Produto em Falta';
         die();
     }
 
-    if(!isset($_POST['nifp_ins'])){
+    if(!isset($_POST['nifp_ins']) || strcmp($_POST['nifp_ins'], '') == 0){
         echo 'NIF do Fornecedor Primário Em Falta!';
         die();
     }
 
-    if(!isset($_POST['fornp_data_ins'])){
+    if(!isset($_POST['fornp_data_ins']) || strcmp($_POST['fornp_data_ins'], '') == 0){
         echo 'Data do Fornecedor Primário em Falta!';
         die();
     }
 
-    if(!isset($_POST['nifs_ins'])){
+    if(!isset($_POST['nifs_ins']) || strcmp($_POST['nifs_ins'], '') == 0){
         echo 'NIF do(s) Fornecedor(es) secundário(s) em falta!';
         die();
     }

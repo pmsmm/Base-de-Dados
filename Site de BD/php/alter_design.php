@@ -7,12 +7,12 @@
  */
     include("Config.php");
 
-    if(!isset($_POST['ean'])){
+    if(!isset($_POST['ean']) || strcmp($_POST['ean'],'') == 0){
         echo 'Missing EAN!';
         die();
     }
 
-    if(!isset($_POST['ean_design'])){
+    if(!isset($_POST['ean_design']) || strcmp($_POST['ean_design'], '') == 0){
         echo 'Missing designation to update!';
         die();
     }

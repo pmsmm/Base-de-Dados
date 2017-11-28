@@ -8,7 +8,7 @@
 
     include("Config.php");
 
-    if (!isset($_POST['ean'])){
+    if (!isset($_POST['ean']) || strcmp($_POST['ean'],'') == 0){
         echo "EAN em falta!";
         die();
     }

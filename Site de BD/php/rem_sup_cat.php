@@ -1,7 +1,7 @@
 <?php
 	include("Config.php");
 
-	if(!isset($_POST['rem_cat'])){
+	if(!isset($_POST['rem_cat']) || strcmp($_POST['rem_cat'], '') == 0){
 		echo "Missing categoria";
 		die();
 	}

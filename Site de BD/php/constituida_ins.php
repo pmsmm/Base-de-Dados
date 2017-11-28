@@ -7,23 +7,21 @@
  */
     include("Config.php");
 
-    if(!isset($_POST['hierarquia_sup']) || !isset($_POST['constituida'])){
+    if(!isset($_POST['hierarquia_sup']) || !isset($_POST['constituida']) || strcmp($_POST['hierarquia_sup'],'') == 0 || strcmp($_POST['constituida'],'') == 0){
         echo "Missing Data!";
         die();
     }
 
-    if (isset($_POST['hierarquia_sup']) && $_POST['hierarquia_sup'] != '') {
-        try{
-            $prepared = $db->prepare("INSERT INTO public.constituida VALUES (:sup_categoria, :sub_categoria);");
+    try{
+        $prepared = $db->prepare("INSERT INTO public.constituida VALUES (:sup_categoria, :sub_categoria);");
 
-            $prepared->bindParam(':sup_categoria', $_POST['hierarquia_sup'], PDO::PARAM_STR);
-            $prepared->bindParam(':sub_categoria', $_POST['constituida'], PDO::PARAM_STR);
+        $prepared->bindParam(':sup_categoria', $_POST['hierarquia_sup'], PDO::PARAM_STR);
+        $prepared->bindParam(':sub_categoria', $_POST['constituida'], PDO::PARAM_STR);
 
-            $prepared->execute();
-        }
-        catch(PDOException $e){
-            handle_sql_errors($e->getMessage());
-        }
+        $prepared->execute();
+    }
+    catch(PDOException $e){
+        handle_sql_errors($e->getMessage());
     }
 
     function handle_sql_errors($error_message)
