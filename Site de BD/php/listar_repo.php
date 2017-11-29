@@ -23,6 +23,8 @@
         $result = $prepared->fetchAll();
 
         $temp = $prepared->fetch();
+
+        echo 'NOVO FICHEIRO COM DEBUGGER';
         echo ($temp);
 
         echo("<table border=\"1\">\n");
