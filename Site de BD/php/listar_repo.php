@@ -1,7 +1,7 @@
 <?php
     include("Config.php");
 
-    if (!isset($_POST['ean']) || strcmp(strval($_POST['ean']),'') == 0 || strlen(strval($_POST['ean'])) != 13){
+    if (!isset($_POST['ean']) || empty(strval($_POST['ean'])) || strlen(strval($_POST['ean'])) != 13){
         echo "EAN em falta!";
         die();
     }

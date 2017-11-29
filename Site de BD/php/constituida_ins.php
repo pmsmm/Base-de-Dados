@@ -7,7 +7,7 @@
  */
     include("Config.php");
 
-    if(!isset($_POST['hierarquia_sup']) || !isset($_POST['constituida']) || strcmp($_POST['hierarquia_sup'],'') == 0 || strcmp($_POST['constituida'],'') == 0){
+    if(!isset($_POST['hierarquia_sup']) || !isset($_POST['constituida']) || empty($_POST['hierarquia_sup']) || empty($_POST['constituida'])){
         echo "Missing Data!";
         die();
     }

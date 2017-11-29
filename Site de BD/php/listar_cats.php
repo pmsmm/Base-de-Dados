@@ -8,7 +8,7 @@
 
     include ('Config.php');
 
-    if(!isset($_POST['categoria']) || strcmp($_POST['categoria'],'')){
+    if(!isset($_POST['categoria']) || empty($_POST['categoria'])){
         echo "Nome da Super Categoria a Listar em Falta";
         die();
     }

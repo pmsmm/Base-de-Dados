@@ -7,7 +7,7 @@
  */
     include("Config.php");
 
-    if(!isset($_POST['ean']) || strcmp($_POST['ean'],'') == 0 || strlen(strval($_POST['ean'])) != 13){
+    if(!isset($_POST['ean']) || empty($_POST['ean']) || strlen(strval($_POST['ean'])) != 13){
         echo 'Missing EAN or EAN different from 13 numbers!';
         die();
     }
