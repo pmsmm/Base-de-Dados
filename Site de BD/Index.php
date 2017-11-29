@@ -29,12 +29,6 @@
 
 				<form action="/~ist425918/php/addCategoria.php" method = "post" style="display: inline-block;">
 					<input type="text" id="categoria" name="categoria_name" placeholder="Nome da Super-Categoria a Adicionar..." style="width: 270px;">
-					<button>Enter</button>
-				</form>
-
-				<br>
-
-				<form action="/~ist425918/php/addSubcategoria.php" method = "post" style="display: inline-block; margin-top: 15px;">
 					<input type="text" placeholder="Nome da Categoria-Simples a Adicionar..." id="sub_categoria" name="sub_categoria_name" style="width: 270px;">
 					<button>Enter</button>
 				</form>

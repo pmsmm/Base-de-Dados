@@ -1,21 +1,21 @@
 <?php
 	include("Config.php");
 
-	if(!isset($_POST['categoria_name']) || empty($_POST['categoria_name'])){
+	if(!isset($_POST['categoria_name']) and !isset($_POST['sub_categoria']) || empty($_POST['categoria_name'])){
 		echo "Missing categoria";
 		die();
 	}
 
-    if(!isset($_POST['sub_categoria_name']) || empty($_POST['sub_categoria_name'])){
+    if(!isset($_POST['sub_categoria_name']) || empty($_POST['sub_categoria'])){
         echo "Missing Categoria Simples";
         die();
     }
 
 	try{
         $var1=strtolower($_POST['categoria_name']);
-        $var2=strtolower($_POST['sub_categoria_name']);
+        $var2=strtolower($_POST['sub_categoria']);
 
-        if(isset($_POST['categoria_name']) && isset($_POST['sub_categoria_name'])){
+        if(isset($_POST['categoria_name']) && isset($_POST['sub_categoria'])){
             try{
                 $db->beginTransaction();
 
@@ -80,7 +80,7 @@
                 handle_sql_errors($e->getMessage());
             }
         }
-        if (isset($_POST['sub_categoria_name']) && !isset($_POST['categoria_name'])){
+        if (isset($_POST['sub_categoria']) && !isset($_POST['categoria_name'])){
             try{
                 $db->beginTransaction();
 
