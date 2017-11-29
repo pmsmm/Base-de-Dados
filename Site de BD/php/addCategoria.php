@@ -6,17 +6,111 @@
 		die();
 	}
 
+    if(!isset($_POST['sub_categoria_name']) || empty($_POST['sub_categoria_name'])){
+        echo "Missing Categoria Simples";
+        die();
+    }
+
 	try{
-        $var=strtolower($_POST['categoria_name']);
+        $var1=strtolower($_POST['categoria_name']);
+        $var2=strtolower($_POST['sub_categoria_name']);
 
-		$prepared = $db->prepare("INSERT INTO public.categoria (nome) VALUES (:categoria);");
-        $statement = $db->prepare("INSERT INTO public.supercategoria (nome) VALUES (:super_cat);");
+        if(isset($_POST['categoria_name']) && isset($_POST['sub_categoria_name'])){
+            try{
+                $db->beginTransaction();
 
-		$prepared->bindParam(':categoria', $var, PDO::PARAM_STR);
-        $statement->bindParam(':super_cat', $var, PDO::PARAM_STR);
+                $prepared = $db->prepare("INSERT INTO public.categoria (nome) VALUES (:categoria);");
 
-		$prepared->execute();
-        $statement->execute();
+                $prepared->bindParam(':categoria', $var1, PDO::PARAM_STR);
+
+                $prepared->execute();
+
+                $db->commit();
+            }catch (PDOException $e){
+                $db->rollBack();
+                handle_sql_errors($e->getMessage());
+            }
+
+            try{
+                $db->beginTransaction();
+
+                $prepared1 = $db->prepare("INSERT INTO public.categoria (nome) VALUES (:categoria);");
+
+                $prepared1->bindParam(':categoria', $var2, PDO::PARAM_STR);
+
+                $prepared1->execute();
+
+                $db->commit();
+            }catch(PDOException $e){
+                $db->rollBack();
+                handle_sql_errors($e->getMessage());
+            }
+
+            try{
+                $db->beginTransaction();
+
+                $statement = $db->prepare("INSERT INTO public.supercategoria (nome) VALUES (:super_cat);");
+                $statement1 = $db->prepare("INSERT INTO public.categoriasimples (nome) VALUES (:super_cat);");
+
+                $statement->bindParam(':super_cat', $var1, PDO::PARAM_STR);
+                $statement1->bindParam(':super_cat', $var2, PDO::PARAM_STR);
+
+                $statement->execute();
+                $statement1->execute();
+
+                $db->commit();
+            }catch(PDOException $e){
+                $db->rollBack();
+                handle_sql_errors($e->getMessage());
+            }
+
+            try{
+                $db->beginTransaction();
+
+                $constituida = $db->prepare('INSERT INTO public.constituida VALUES (:cat, :sub);');
+
+                $constituida->bindParam(':cat', $var1, PDO::PARAM_STR);
+                $constituida->bindParam(':sub', $var2, PDO::PARAM_STR);
+
+                $constituida->execute();
+
+                $db->commit();
+            }catch (PDOException $e){
+                $db->rollBack();
+                handle_sql_errors($e->getMessage());
+            }
+        }
+        if (isset($_POST['sub_categoria_name']) && !isset($_POST['categoria_name'])){
+            try{
+                $db->beginTransaction();
+
+                $prepared = $db->prepare("INSERT INTO public.categoria (nome) VALUES (:categoria);");
+
+                $prepared->bindParam(':categoria', $var2, PDO::PARAM_STR);
+
+                $prepared->execute();
+
+                $db->commit();
+            }catch (PDOException $e){
+                $db->rollBack();
+                handle_sql_errors($e->getMessage());
+            }
+
+            try{
+                $db->beginTransaction();
+
+                $statement1 = $db->prepare("INSERT INTO public.categoriasimples (nome) VALUES (:super_cat);");
+
+                $statement1->bindParam(':super_cat', $var2, PDO::PARAM_STR);
+
+                $statement1->execute();
+
+                $db->commit();
+            }catch (PDOException $e){
+                $db->rollBack();
+                handle_sql_errors($e->getMessage());
+            }
+        }
 	}
 	catch(PDOException $e){
 		handle_sql_errors($e->getMessage());
