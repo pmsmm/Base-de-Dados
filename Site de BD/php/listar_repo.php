@@ -1,11 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Pedro
- * Date: 28/11/2017
- * Time: 16:15
- */
-
     include("Config.php");
 
     if (!isset($_POST['ean']) || strcmp(strval($_POST['ean']),'') == 0 || strlen(strval($_POST['ean'])) != 13){
@@ -14,18 +7,13 @@
     }
 
     try{
-        $prepared = $db->prepare("SELECT evento_reposicao.operador, evento_reposicao.instante, unidades FROM public.evento_reposicao, public.reposicao WHERE ean = (:ean_ins);");
+        $prepared = $db->prepare("SELECT operador, instante, unidades FROM public.reposicao WHERE ean = (:ean_ins);");
 
         $prepared->bindParam('ean_ins', $_POST['ean'], PDO::PARAM_INT);
 
         $prepared->execute();
 
         $result = $prepared->fetchAll();
-
-        $temp = $prepared->fetch();
-
-        echo 'NOVO FICHEIRO COM DEBUGGER';
-        echo ($temp);
 
         echo("<table border=\"1\">\n");
         echo("<tr><td>Operador</td><td>Instante</td><td>Unidades</td></tr>\n");
@@ -40,10 +28,12 @@
             echo("</td></tr>\n");
         }
         echo("</table>\n");
-        echo '<form action="/~ist425918/Index.php">
-                        <input type="submit" value="Home" />
-                        </form>';
+
+        echo '<form action="/ist425911/index.php">
+                            <input type="submit" value="Home" />
+                            </form>';
     }
     catch(PDOException $e){
         handle_sql_errors($e->getMessage());
     }
+?>

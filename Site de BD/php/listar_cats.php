@@ -45,4 +45,6 @@
         handle_sql_errors($e->getMessage());
     }
 
+    close();
+    die();
     

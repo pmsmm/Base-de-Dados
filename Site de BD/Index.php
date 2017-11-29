@@ -90,7 +90,7 @@
 						<button>Enter</button>
 					</form>
 
-					<form action="/php/Remcategoria.php" style="display: inline-flex; margin-top: 20px;">					
+					<form action="/~ist425918/php/listar_cats.php" method="post" style="display: inline-flex; margin-top: 20px;">					
 						<input type="text" name="categoria" placeholder="Inserir o Nome da Super-Categoria a Listar:">
 						<button>Enter</button>
 					</form>
