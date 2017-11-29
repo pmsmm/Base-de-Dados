@@ -22,6 +22,9 @@
 
         $result = $prepared->fetchAll();
 
+        $temp = $prepared->fetch();
+        echo ($temp);
+
         echo("<table border=\"1\">\n");
         echo("<tr><td>Operador</td><td>Instante</td><td>Unidades</td></tr>\n");
         foreach($result as $row)

@@ -5,7 +5,6 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script type="text/javascript" src="Script.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	
 </head>
@@ -20,7 +19,7 @@
 	?>
 
 	<div class="col-lg-12" id="botao" style="display: none;">
-		<button class="button" style="vertical-align:middle; margin-left: 650px; margin-top: 170px;" onclick="hide()"><span>Começar </span></button>
+		<button class="button" style="vertical-align:middle; margin-left: 650px; margin-top: 170px;"><span>Começar </span></button>
 	</div>
 
 	<div id="escondido">
@@ -28,21 +27,21 @@
 
 			<div class="col-lg-4" style="text-align: center;">
 
-				<form action="/~ist425918/php/addCategoria.php" method = "post" style="display: inline-block;" onsubmit="return check_param_addCategoria()">
+				<form action="/~ist425918/php/addCategoria.php" method = "post" style="display: inline-block;">
 					<input type="text" id="categoria" name="categoria_name" placeholder="Nome da Super-Categoria a Adicionar..." style="width: 270px;">
 					<button>Enter</button>
 				</form>
 
 				<br>
 
-				<form action="/~ist425918/php/addSubcategoria.php" method = "post" style="display: inline-block; margin-top: 15px;" onsubmit="return check_param_add_Subcategoria()">
+				<form action="/~ist425918/php/addSubcategoria.php" method = "post" style="display: inline-block; margin-top: 15px;">
 					<input type="text" placeholder="Nome da Categoria-Simples a Adicionar..." id="sub_categoria" name="sub_categoria_name" style="width: 270px;">
 					<button>Enter</button>
 				</form>
 
 				<br>
 
-				<form action="/~ist425918/php/constituida_ins.php" method = "post" style="display: inline-block; margin-top: 15px;" onsubmit="return check_param_addConstituida()">
+				<form action="/~ist425918/php/constituida_ins.php" method = "post" style="display: inline-block; margin-top: 15px;">
 					<input type="text" name="hierarquia_sup" placeholder="Nome da Super-Categoria de Ordem Superior (Opcional) ..." id="hierarquia">
 					<input type="text" name="constituida" placeholder="Nome da Super-Categoria Filha ..." id="parametro">
 					<button>Enter</button>
@@ -52,7 +51,7 @@
 
 				<div style="margin-top: 20px;">
 
-					<form style="display: inline-block;" action="/~ist425918/php/alter_design.php" method="post" onsubmit="return check_param_alter_design()">
+					<form style="display: inline-block;" action="/~ist425918/php/alter_design.php" method="post">
 						<input type="number" name="ean" placeholder="Insira o EAN do Produto a Alterar:" style="margin-top: 15px;" id="ean_id">
 						<input type="text" name="ean_design" placeholder="Insira a Nova Designação:" style="margin-top: 15px;" id="design_id">
 						<button>Enter</button>
@@ -70,14 +69,14 @@
 			<div class="col-lg-4" style="text-align: center;">
 				<div>
 
-					<form action="/~ist425918/php/rem_sup_cat.php" method="post" style="display: inline-flex;" onsubmit="return check_param_rem_Supcategoria()">					
+					<form action="/~ist425918/php/rem_sup_cat.php" method="post" style="display: inline-flex;">					
 						<input type="text" name="rem_cat" id="cat_rem" placeholder="Nome da Super-Categoria a Remover...">
 						<button>Enter</button>
 					</form>
 
 					<br>
 
-					<form action="/~ist425918/php/rem_cat_simp.php" style="display: inline-flex; margin-top: 20px;" method="post" onsubmit="return check_param_rem_Simpcategoria()">
+					<form action="/~ist425918/php/rem_cat_simp.php" style="display: inline-flex; margin-top: 20px;" method="post">
 						<input type="text" id="rem_cat_simples_id" name="rem_cat_simples" placeholder="Insira o nome da Sub-Categoria a Remover:">
 						<button>Enter</button>
 					</form>
@@ -101,7 +100,7 @@
 			</div>
 
 			<div class="col-lg-4">
-				<form action="/~ist425918/php/produto_ins.php" method="post" style="display: inline-block;" onsubmit="return insert_new_product()">
+				<form action="/~ist425918/php/produto_ins.php" method="post" style="display: inline-block;">
 					<input type="number" id="campo1" name="ean_ins" placeholder="Insira o EAN do Produto:">
 					<br>
 					<input type="text" id="campo2" name="design_ins" placeholder="Insira a Designação do Produto:">
