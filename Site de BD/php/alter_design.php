@@ -31,15 +31,6 @@
         handle_sql_errors($e->getMessage());
     }
 
-    function handle_sql_errors($error_message)
-    {
-        echo $error_message;
-        echo '<form action="/~ist425918/Index.php">
-                    <input type="submit" value="Home" />
-                    </form>';
-        die();
-    }
-
     header('Location: /~ist425918/Index.php');
     close();
     die();
