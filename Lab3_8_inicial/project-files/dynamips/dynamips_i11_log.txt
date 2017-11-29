@@ -1,0 +1,62 @@
+Nov 29 12:32:34.069 HYPERVISOR: Release 0.2.14-x86/Windows (tag 2014092320)
+Nov 29 12:32:34.071 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 60440.
+Nov 29 12:32:34.559 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 29 12:32:34.568 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips 
+Nov 29 12:32:34.568 GENERAL: working_dir=C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips
+Nov 29 12:32:34.584 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips\d61c189d-51f3-4782-859d-c9819080c800 
+Nov 29 12:32:34.585 GENERAL: working_dir=C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips\d61c189d-51f3-4782-859d-c9819080c800
+Nov 29 12:32:34.600 HYPERVISOR: exec_cmd: vm create R1 1 c3725 
+Nov 29 12:32:34.638 VM: VM R1 created.
+Nov 29 12:32:34.645 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5005 
+Nov 29 12:32:34.660 HYPERVISOR: exec_cmd: c3725 get_mac_addr R1 
+Nov 29 12:32:34.678 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Nov 29 12:32:34.693 HYPERVISOR: exec_cmd: vm set_exec_area R1 64 
+Nov 29 12:32:34.712 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 29 12:32:34.728 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x60a68e70 
+Nov 29 12:32:34.746 HYPERVISOR: exec_cmd: vm set_ios R1 C:/Users/Miguel.ACER4810T/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Nov 29 12:32:34.762 HYPERVISOR: exec_cmd: c3725 set_mac_addr R1 c201.16bc.0000 
+Nov 29 12:32:34.777 HYPERVISOR: exec_cmd: vm set_nvram R1 256 
+Nov 29 12:32:34.793 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5005 
+Nov 29 12:32:34.810 HYPERVISOR: exec_cmd: vm set_config R1 configs/i1_startup-config.cfg 
+Nov 29 12:32:44.844 HYPERVISOR: exec_cmd: nio create_udp udp-2970fce4-48f5-4da4-9c77-440f4050a4eb 10007 127.0.0.1 10006 
+Nov 29 12:32:44.858 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 0 udp-2970fce4-48f5-4da4-9c77-440f4050a4eb 
+Nov 29 12:32:44.872 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 29 12:32:45.443 HYPERVISOR: exec_cmd: nio create_udp udp-e176eac2-0fad-47f5-915b-22b6acb32df7 10008 127.0.0.1 10009 
+Nov 29 12:32:45.470 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R1 0 1 udp-e176eac2-0fad-47f5-915b-22b6acb32df7 
+Nov 29 12:32:45.485 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 29 12:32:55.685 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Nov 29 12:32:55.689 VM: VM Ghost created.
+Nov 29 12:32:55.719 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Miguel.ACER4810T/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Nov 29 12:32:55.735 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Nov 29 12:32:55.752 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips\c3725-advipservicesk9-mz.124-21.image-128.ghost' 
+Nov 29 12:32:55.772 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Nov 29 12:32:55.790 HYPERVISOR: exec_cmd: vm start Ghost 
+Nov 29 12:32:56.348 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Nov 29 12:32:56.407 VM: VM Ghost shutdown.
+Nov 29 12:32:56.407 VM: VM Ghost destroyed.
+Nov 29 12:32:56.485 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 29 12:32:56.516 HYPERVISOR: exec_cmd: vm start R1 
+Nov 29 12:38:39.328 HYPERVISOR: exec_cmd: vm extract_config R1 
+Nov 29 12:38:39.370 HYPERVISOR: exec_cmd: vm extract_config R1 
+Nov 29 12:40:59.107 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 29 12:40:59.161 HYPERVISOR: exec_cmd: vm stop R1 
+Nov 29 12:40:59.444 VM: VM R1 shutdown.
+Nov 29 12:40:59.475 HYPERVISOR: exec_cmd: vm extract_config R1 
+Nov 29 12:42:07.609 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Nov 29 12:42:07.613 VM: VM Ghost created.
+Nov 29 12:42:07.646 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Miguel.ACER4810T/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Nov 29 12:42:07.662 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Nov 29 12:42:07.677 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips\c3725-advipservicesk9-mz.124-21.image-128.ghost' 
+Nov 29 12:42:07.692 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Nov 29 12:42:07.709 HYPERVISOR: exec_cmd: vm start Ghost 
+Nov 29 12:42:08.119 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Nov 29 12:42:08.204 VM: VM Ghost shutdown.
+Nov 29 12:42:08.204 VM: VM Ghost destroyed.
+Nov 29 12:42:08.268 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 29 12:42:08.300 HYPERVISOR: exec_cmd: vm start R1 
+Nov 29 12:57:39.867 HYPERVISOR: exec_cmd: vm extract_config R1 
+Nov 29 12:57:39.907 HYPERVISOR: exec_cmd: vm extract_config R1 
+Nov 29 13:42:39.802 HYPERVISOR: exec_cmd: vm get_status R1 
+Nov 29 13:42:39.860 HYPERVISOR: exec_cmd: vm stop R1 
+Nov 29 13:42:40.177 VM: VM R1 shutdown.
+Nov 29 13:42:40.263 HYPERVISOR: exec_cmd: vm extract_config R1 
