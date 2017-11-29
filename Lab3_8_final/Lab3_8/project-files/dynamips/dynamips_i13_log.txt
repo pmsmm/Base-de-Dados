@@ -1,0 +1,82 @@
+Nov 29 12:32:36.323 HYPERVISOR: Release 0.2.14-x86/Windows (tag 2014092320)
+Nov 29 12:32:36.326 HYPERVISOR: Started on IP = 127.0.0.1, TCP port = 60447.
+Nov 29 12:32:36.804 HYPERVISOR: exec_cmd: hypervisor version 
+Nov 29 12:32:36.823 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips 
+Nov 29 12:32:36.823 GENERAL: working_dir=C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips
+Nov 29 12:32:36.839 HYPERVISOR: exec_cmd: hypervisor working_dir C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips\e1c291a8-887f-4226-8188-fcaf90dfb376 
+Nov 29 12:32:36.841 GENERAL: working_dir=C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips\e1c291a8-887f-4226-8188-fcaf90dfb376
+Nov 29 12:32:36.854 HYPERVISOR: exec_cmd: vm create R4 4 c3725 
+Nov 29 12:32:36.933 VM: VM R4 created.
+Nov 29 12:32:36.945 HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 5007 
+Nov 29 12:32:36.966 HYPERVISOR: exec_cmd: c3725 get_mac_addr R4 
+Nov 29 12:32:36.980 HYPERVISOR: exec_cmd: vm set_disk0 R4 0 
+Nov 29 12:32:36.995 HYPERVISOR: exec_cmd: vm set_exec_area R4 64 
+Nov 29 12:32:37.009 HYPERVISOR: exec_cmd: vm get_status R4 
+Nov 29 12:32:37.025 HYPERVISOR: exec_cmd: vm set_idle_pc R4 0x60a68e70 
+Nov 29 12:32:37.042 HYPERVISOR: exec_cmd: vm set_ios R4 C:/Users/Miguel.ACER4810T/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Nov 29 12:32:37.057 HYPERVISOR: exec_cmd: c3725 set_mac_addr R4 c204.12ac.0000 
+Nov 29 12:32:37.071 HYPERVISOR: exec_cmd: vm set_nvram R4 256 
+Nov 29 12:32:37.086 HYPERVISOR: exec_cmd: vm get_status R4 
+Nov 29 12:32:37.101 HYPERVISOR: exec_cmd: vm slot_add_binding R4 1 0 NM-1FE-TX 
+Nov 29 12:32:37.118 HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 5007 
+Nov 29 12:32:37.132 HYPERVISOR: exec_cmd: vm set_config R4 configs/i4_startup-config.cfg 
+Nov 29 12:32:42.063 HYPERVISOR: exec_cmd: nio create_udp udp-da5699b8-984e-46bb-b06f-d02fc8760d93 10001 127.0.0.1 10000 
+Nov 29 12:32:42.096 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 0 0 udp-da5699b8-984e-46bb-b06f-d02fc8760d93 
+Nov 29 12:32:42.124 HYPERVISOR: exec_cmd: vm get_status R4 
+Nov 29 12:32:42.972 HYPERVISOR: exec_cmd: nio create_udp udp-a5feb97a-008d-4f06-81fb-8d8f1b264c57 10002 127.0.0.1 10003 
+Nov 29 12:32:42.988 HYPERVISOR: exec_cmd: vm slot_add_nio_binding R4 1 0 udp-a5feb97a-008d-4f06-81fb-8d8f1b264c57 
+Nov 29 12:32:43.006 HYPERVISOR: exec_cmd: vm get_status R4 
+Nov 29 12:32:54.945 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Nov 29 12:32:54.952 VM: VM Ghost created.
+Nov 29 12:32:54.967 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Miguel.ACER4810T/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Nov 29 12:32:54.983 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Nov 29 12:32:54.998 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips\c3725-advipservicesk9-mz.124-21.image-128.ghost' 
+Nov 29 12:32:55.016 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Nov 29 12:32:55.031 HYPERVISOR: exec_cmd: vm start Ghost 
+Nov 29 12:32:55.534 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Nov 29 12:32:55.603 VM: VM Ghost shutdown.
+Nov 29 12:32:55.603 VM: VM Ghost destroyed.
+Nov 29 12:32:55.671 HYPERVISOR: exec_cmd: vm get_status R4 
+Nov 29 12:32:55.704 HYPERVISOR: exec_cmd: vm start R4 
+Nov 29 12:36:57.232 HYPERVISOR: exec_cmd: vm extract_config R4 
+Nov 29 12:36:57.309 HYPERVISOR: exec_cmd: vm extract_config R4 
+Nov 29 12:40:59.142 HYPERVISOR: exec_cmd: vm get_status R4 
+Nov 29 12:40:59.182 HYPERVISOR: exec_cmd: vm stop R4 
+Nov 29 12:40:59.467 VM: VM R4 shutdown.
+Nov 29 12:40:59.545 HYPERVISOR: exec_cmd: vm extract_config R4 
+Nov 29 12:42:08.281 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Nov 29 12:42:08.285 VM: VM Ghost created.
+Nov 29 12:42:08.316 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Miguel.ACER4810T/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Nov 29 12:42:08.341 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Nov 29 12:42:08.360 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips\c3725-advipservicesk9-mz.124-21.image-128.ghost' 
+Nov 29 12:42:08.377 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Nov 29 12:42:08.408 HYPERVISOR: exec_cmd: vm start Ghost 
+Nov 29 12:42:08.836 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Nov 29 12:42:08.905 VM: VM Ghost shutdown.
+Nov 29 12:42:08.905 VM: VM Ghost destroyed.
+Nov 29 12:42:09.079 HYPERVISOR: exec_cmd: vm get_status R4 
+Nov 29 12:42:09.121 HYPERVISOR: exec_cmd: vm start R4 
+Nov 29 13:19:12.496 HYPERVISOR: exec_cmd: vm extract_config R4 
+Nov 29 13:19:12.570 HYPERVISOR: exec_cmd: vm extract_config R4 
+Nov 29 13:34:12.767 HYPERVISOR: exec_cmd: vm extract_config R4 
+Nov 29 13:34:12.922 HYPERVISOR: exec_cmd: vm extract_config R4 
+Nov 29 13:42:39.766 HYPERVISOR: exec_cmd: vm get_status R4 
+Nov 29 13:42:39.831 HYPERVISOR: exec_cmd: vm stop R4 
+Nov 29 13:42:40.040 VM: VM R4 shutdown.
+Nov 29 13:42:40.070 HYPERVISOR: exec_cmd: vm extract_config R4 
+Nov 29 13:44:52.883 HYPERVISOR: exec_cmd: vm create Ghost 0 c3725 
+Nov 29 13:44:52.887 VM: VM Ghost created.
+Nov 29 13:44:52.916 HYPERVISOR: exec_cmd: vm set_ios Ghost C:/Users/Miguel.ACER4810T/GNS3/images/IOS/c3725-advipservicesk9-mz.124-21.image 
+Nov 29 13:44:52.934 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Nov 29 13:44:52.950 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost 'C:\Users\Miguel.ACER4810T\GNS3\projects\Lab3_8\project-files\dynamips\c3725-advipservicesk9-mz.124-21.image-128.ghost' 
+Nov 29 13:44:52.966 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Nov 29 13:44:52.981 HYPERVISOR: exec_cmd: vm start Ghost 
+Nov 29 13:44:53.411 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Nov 29 13:44:53.481 VM: VM Ghost shutdown.
+Nov 29 13:44:53.481 VM: VM Ghost destroyed.
+Nov 29 13:44:53.547 HYPERVISOR: exec_cmd: vm get_status R4 
+Nov 29 13:44:53.580 HYPERVISOR: exec_cmd: vm start R4 
+Nov 29 14:03:17.670 HYPERVISOR: exec_cmd: vm get_status R4 
+Nov 29 14:03:17.736 HYPERVISOR: exec_cmd: vm stop R4 
+Nov 29 14:03:18.065 VM: VM R4 shutdown.
+Nov 29 14:03:18.182 HYPERVISOR: exec_cmd: vm extract_config R4 
