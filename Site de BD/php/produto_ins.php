@@ -7,7 +7,7 @@
  */
     include("Config.php");
 
-    if(!isset($_POST['ean_ins']) || strcmp($_POST['ean_ins'], '') == 0){
+    if(!isset($_POST['ean_ins']) || strcmp($_POST['ean_ins'], '') == 0 || strlen(strval($_POST['ean_ins'])) != 13){
         echo 'EAN de Produto em Falta!';
         die();
     }
@@ -22,7 +22,7 @@
         die();
     }
 
-    if(!isset($_POST['nifp_ins']) || strcmp($_POST['nifp_ins'], '') == 0){
+    if(!isset($_POST['nifp_ins']) || strcmp($_POST['nifp_ins'], '') == 0 || strlen(strval($_POST['nifp_ins'])) != 9){
         echo 'NIF do Fornecedor Primário Em Falta!';
         die();
     }
@@ -32,12 +32,16 @@
         die();
     }
 
-    if(!isset($_POST['nifs_ins']) || strcmp($_POST['nifs_ins'], '') == 0){
+    if(!isset($_POST['nifs_ins']) || strcmp($_POST['nifs_ins'], '') == 0 || strlen(strval($_POST['nifs_ins'])) != 9){
         echo 'NIF do(s) Fornecedor(es) secundário(s) em falta!';
         die();
     }
 
     try{
+        $var1=strtolower($_POST['categoria_name']);
+        $var2=strtolower($_POST['design_ins']);
+        $var3=strtolower($_POST['categoria_ins']);
+
         $prepared = $db->prepare("INSERT INTO public.produto VALUES (:ean, :designacao, :nif_primario, :data_primario, :categoria);");
 
         $statement = $db->prepare("INSERT INTO public.fornecedor_sec VALUES (:nif_sec, :ean_sec);");
@@ -47,11 +51,11 @@
         $statement->bindParam(':nif_sec', $_POST['nifs_ins'], PDO::PARAM_INT);
         $statement->bindParam(':ean_sec', $_POST['ean_ins'], PDO::PARAM_INT);
 
-        $integrity->bindParam(':categoria', $_POST['categoria_name'], PDO::PARAM_STR);
+        $integrity->bindParam(':categoria', $var1, PDO::PARAM_STR);
 
         $prepared->bindParam(':ean', $_POST['ean_ins'], PDO::PARAM_INT);
-        $prepared->bindParam(':designacao', $_POST['design_ins'], PDO::PARAM_STR);
-        $prepared->bindParam(':categoria', $_POST['categoria_ins'], PDO::PARAM_STR);
+        $prepared->bindParam(':designacao', $var2, PDO::PARAM_STR);
+        $prepared->bindParam(':categoria', $var3, PDO::PARAM_STR);
         $prepared->bindParam(':nif_primario', $_POST['nifp_ins'], PDO::PARAM_INT);
         $prepared->bindParam(':data_primario', $_POST['fornp_data_ins'], PDO::PARAM_STR);
 

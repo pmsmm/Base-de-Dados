@@ -7,11 +7,13 @@
 	}
 
 	try{
+	    $var=strtolower($_POST['sub_categoria_name']);
+
 		$prepared = $db->prepare("INSERT INTO public.categoria (nome) VALUES (:sub_categoria);");
         $statement = $db->prepare("INSERT INTO public.categoriasimples (nome) VALUES (:sub_categoria);");
 	
-		$prepared->bindParam(':sub_categoria', $_POST['sub_categoria_name'], PDO::PARAM_STR);
-        $statement->bindParam(':sub_categoria', $_POST['sub_categoria_name'], PDO::PARAM_STR);
+		$prepared->bindParam(':sub_categoria', $var, PDO::PARAM_STR);
+        $statement->bindParam(':sub_categoria', $var, PDO::PARAM_STR);
 	
 		$prepared->execute();
         $statement->execute();

@@ -8,7 +8,7 @@
 
     include("Config.php");
 
-    if (!isset($_POST['ean']) || strcmp($_POST['ean'],'') == 0){
+    if (!isset($_POST['ean']) || strcmp(strval($_POST['ean']),'') == 0 || strlen(strval($_POST['ean'])) != 13){
         echo "EAN em falta!";
         die();
     }
@@ -35,6 +35,9 @@
             echo("</td></tr>\n");
         }
         echo("</table>\n");
+        echo '<form action="/~ist425918/Index.php">
+                        <input type="submit" value="Home" />
+                        </form>';
     }
     catch(PDOException $e){
         handle_sql_errors($e->getMessage());
@@ -48,7 +51,3 @@
                         </form>';
         die();
     }
-
-    header('Location: /~ist425918/Index.php');
-    close();
-    die();

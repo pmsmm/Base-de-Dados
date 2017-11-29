@@ -7,8 +7,8 @@
  */
     include("Config.php");
 
-    if(!isset($_POST['ean']) || strcmp($_POST['ean'],'') == 0){
-        echo 'Missing EAN!';
+    if(!isset($_POST['ean']) || strcmp($_POST['ean'],'') == 0 || strlen(strval($_POST['ean'])) != 13){
+        echo 'Missing EAN or EAN different from 13 numbers!';
         die();
     }
 
@@ -18,10 +18,12 @@
     }
 
     try{
+        $var2=strtolower($_POST['ean_design']);
+
         $prepared=$db->prepare("UPDATE public.produto SET design = (:designacao) WHERE ean = (:ean);");
 
         $prepared->bindParam(':ean', $_POST['ean'], PDO::PARAM_INT);
-        $prepared->bindParam(':designacao', $_POST['ean_design'], PDO::PARAM_STR);
+        $prepared->bindParam(':designacao', $var2, PDO::PARAM_STR);
 
         $prepared->execute();
     }
