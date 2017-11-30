@@ -20,12 +20,12 @@ CREATE TABLE categoria(
 CREATE TABLE categoria_simples(
 	nome char(64) NOT NULL,
 	PRIMARY KEY (nome),
-	FOREIGN KEY(nome) references categoria (nome));
+	FOREIGN KEY(nome) references categoria (nome) on delete cascade);
 
 CREATE TABLE super_categoria(
 	nome char(64) NOT NULL,
 	PRIMARY KEY (nome),
-	FOREIGN KEY (nome) references categoria(nome));
+	FOREIGN KEY (nome) references categoria(nome) on delete cascade);
 
 
 
@@ -33,8 +33,8 @@ CREATE TABLE constituida(
 	super_categoria char(64) NOT NULL,
 	categoria char(64) NOT NULL,
 	PRIMARY KEY (super_categoria, categoria),
-	FOREIGN KEY (super_categoria) REFERENCES super_categoria(nome),
-	FOREIGN KEY (categoria) REFERENCES categoria(nome));
+	FOREIGN KEY (super_categoria) REFERENCES super_categoria(nome) on delete cascade,
+	FOREIGN KEY (categoria) REFERENCES categoria(nome)on delete cascade);
 
 CREATE TABLE fornecedor(
 	nif numeric(9) NOT NULL unique,
@@ -51,7 +51,7 @@ CREATE TABLE produto(
 	data date NOT NULL,
 	PRIMARY KEY(ean),
 	FOREIGN KEY(forn_primario) references fornecedor(nif),
-	CONSTRAINT ean_tamanho CHECK (ean >= 1000000000000),
+	CONSTRAINT ean_tamanho CHECK (ean >=1000000000000),
 	CONSTRAINT nif_tamanho CHECK (forn_primario >= 100000000)); 
  
 
@@ -60,7 +60,7 @@ CREATE TABLE fornece_sec(
 	ean numeric(13) NOT NULL,
 	PRIMARY KEY (nif, ean),
 	FOREIGN KEY (nif) references fornecedor(nif),
-	FOREIGN KEY(ean) references produto(ean));
+	FOREIGN KEY(ean) references produto(ean) on delete cascade);
 
 
 CREATE TABLE corredor(
@@ -72,7 +72,7 @@ CREATE TABLE corredor(
 CREATE TABLE prateleira(
 	nro integer NOT NULL,
 	lado char(10) NOT NULL,
-	altura double precision NOT NULL CHECK (altura >= 0),
+	altura varchar(12) NOT NULL ,
 	PRIMARY KEY(nro, lado, altura),
 	FOREIGN KEY(nro) references corredor(nro));
 
@@ -80,13 +80,13 @@ CREATE TABLE planograma(
 	ean numeric(13) NOT NULL,
 	nro integer NOT NULL,
 	lado char(10) NOT NULL CHECK (lado != ''),
-	altura double precision CHECK (altura >=0),
+	altura varchar(12) NOT NULL,
 	faces integer NOT NULL CHECK (faces >= 0),
 	unidades integer NOT NULL CHECK (unidades >= 0),
 	loc integer NOT NULL CHECK (loc >= 0),
 	PRIMARY KEY (ean, nro, lado, altura),
 	FOREIGN KEY (nro, lado, altura) REFERENCES prateleira(nro, lado, altura),
-	FOREIGN KEY (ean) REFERENCES produto(ean));
+	FOREIGN KEY (ean) REFERENCES produto(ean)on delete cascade);
 
 CREATE TABLE evento_reposicao(
 	operador varchar(64) NOT NULL,
@@ -98,10 +98,10 @@ CREATE TABLE reposicao(
 	ean numeric(13) NOT NULL,
 	nro integer NOT NULL,
 	lado varchar(10) NOT NULL,
-	altura double precision NOT NULL,
+	altura varchar(12) NOT NULL,
 	operador char(64) NOT NULL,
 	instante date NOT NULL,
 	unidades integer CHECK (unidades >= 0),
 	PRIMARY KEY (ean , nro, lado, altura, operador, instante),
 	FOREIGN KEY (operador, instante) REFERENCES evento_reposicao(operador, instante),
-	FOREIGN KEY (ean, nro, lado, altura) REFERENCES planograma(ean, nro, lado, altura));
+	FOREIGN KEY (ean, nro, lado, altura) REFERENCES planograma(ean, nro, lado, altura)on delete cascade);
