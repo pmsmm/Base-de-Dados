@@ -13,6 +13,5 @@
         echo '<form action="/~ist425918/Index.php">
                             <input type="submit" value="Home" />
                             </form>';
-        die();
     }
 ?>

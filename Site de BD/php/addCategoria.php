@@ -12,10 +12,11 @@
     }
 
 	try{
-        $var1=strtolower($_POST['categoria_name']);
-        $var2=strtolower($_POST['sub_categoria_name']);
+        if(isset($_POST['categoria_name']) && isset($_POST['sub_categoria_name']) and !empty($_POST['sub_categoria_name']) and !empty($_POST['categoria_name'])){
 
-        if(isset($_POST['categoria_name']) && isset($_POST['sub_categoria_name'])){
+            $var1=strtolower($_POST['categoria_name']);
+            $var2=strtolower($_POST['sub_categoria_name']);
+
             try{
                 $db->beginTransaction();
 
@@ -80,7 +81,13 @@
                 handle_sql_errors($e->getMessage());
             }
         }
-        if (isset($_POST['sub_categoria_name']) && !isset($_POST['categoria_name'])){
+        if (isset($_POST['sub_categoria_name']) and empty($_POST['categoria_name'])){
+
+            $var2=strtolower($_POST['sub_categoria_name']);
+
+            echo $var2;
+            echo 'ENTREI ONDE DEVIA PORRA';
+
             try{
                 $db->beginTransaction();
 
@@ -116,8 +123,8 @@
 		handle_sql_errors($e->getMessage());
 	}
 
-	header('Location: /~ist425918/Index.php');
-	close();
-	die();
+	//header('Location: /~ist425918/Index.php');
+	//close();
+	//die();
 	
 ?>
