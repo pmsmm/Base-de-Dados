@@ -20,13 +20,13 @@
             $var1=$row['super_categoria'];
         }
 
-        $bora=$db->prepare("SELECT categoria FROM public.constituida WHERE supercategoria = (:finalmente);");
+        $bora=$db->prepare("SELECT categoria FROM public.constituida WHERE super_categoria = (:finalmente);");
         $bora->bindParam(':finalmente', $var1, PDO::PARAM_STR);
         $bora->execute();
 
         $result=$bora->rowCount();
         if($result = 1){
-            echo "Não é possível remover a super categoria pretendida pois é a única da supercategoria "+$var1;
+            echo "Não é possível remover a super categoria pretendida pois é a única da supercategoria";
             close();
         }
     }catch (PDOException $e){
