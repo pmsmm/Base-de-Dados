@@ -13,7 +13,7 @@
 <body style="background-image: url(Teste.jpg);">
 	<div class="jumbotron" style="text-align: center; background: transparent;">
 		<h1>Bem Vindos ao Market Manager</h1>
-		<p style="color: white;">Bem vindos, prepara-se para a melhor experiência de gestão de supermercados de sempre!</p>
+		<p style="color: white;">Bem vindos, preparem-se para a melhor experiência de gestão de supermercados de sempre!</p>
 	</div>
 
 	<?php

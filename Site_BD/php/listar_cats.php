@@ -3,18 +3,24 @@
     <h3>Sub-categorias</h3>
 <?php
 
+	$super_categoria = $_REQUEST['super_categoria'];
+	$categoria = $_REQUEST['categoria'];
 
-
-    $super_categoria = $_POST['super_categoria'];
-    $categoria = $_REQUEST['categoria'];
-    echo("<p>$categoria<p>");
-    
-    if(!isset($super_categoria) || empty($super_categoria)){
-        echo "Nome da Super Categoria a Listar em Falta";
-        die();
+	if((!isset($super_categoria) || empty($super_categoria)) && (!isset($categoria) || empty($categoria))) {
+		echo "Nome da Super Categoria a Listar em Falta";
+		die();
     }
+	if (isset($categoria) && (!empty($categoria))) {
+		$super_categoria = $categoria;
+	}
 
+    echo("<p>Antes<p>");
+    echo("<p>$categoria<p>");
+    echo("<p>Antes2<p>");
 
+    echo ("<p>Aqui</p>");
+    echo ("<p>$super_categoria</p>");
+    echo ("<p>Aqui2</p>");
     
     try
     {
@@ -33,6 +39,7 @@
             $prepared1->execute();
             $result = $prepared1->fetchAll();
         }
+        
         else {
             $prepared2->execute();
             $result = $prepared2->fetchAll();
