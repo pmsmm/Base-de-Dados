@@ -43,7 +43,7 @@ try
             $statement->execute();
 
             
-            die();
+            //die();
 
         }
 	}
@@ -94,7 +94,7 @@ try
             $statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
 			$statement->execute();
             
-            die();
+            //die();
 
         	
         }
@@ -121,7 +121,7 @@ try
             	$statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
 				$statement->execute();
             	
-            	die();
+            	//die();
 
             }
 			//está no sistema e é sub
@@ -142,7 +142,7 @@ try
             	$statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
 				$statement->execute();
             	
-            	die();
+            	//die();
             }
 
         }
@@ -176,7 +176,7 @@ try
                 $statement->execute();
 
             
-            	die();
+            	//die();
 
         	}
         	
@@ -184,8 +184,28 @@ try
  
     	else if(($global1) && ($global)){
  
-        	echo "ambas ja existem";
-    	}
+        	//no caso de serem 2 cat simples uma pode ficar super da outra
+            if(($global2) && (!$global3)){
+
+                $statement = $db->prepare("DELETE FROM public.categoria_simples  WHERE nome= :categoria;");
+                $statement->bindParam(':categoria', $supercategoria, PDO::PARAM_STR);
+                $statement->execute();
+
+                $prepared1 = $db->prepare("INSERT INTO public.super_categoria VALUES (:super_categoria);");
+                $prepared1->bindParam(':super_categoria', $supercategoria, PDO::PARAM_STR);
+                $prepared1->execute();
+
+                $statement = $db->prepare("INSERT INTO public.constituida  VALUES (:super_categoria, :categoria);");
+                $statement->bindParam(':super_categoria', $supercategoria, PDO::PARAM_STR);
+                $statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
+                $statement->execute();
+
+            }
+
+        }
+                
+            
+    	
     }
     
 }
