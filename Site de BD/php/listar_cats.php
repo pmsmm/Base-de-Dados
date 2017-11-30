@@ -42,7 +42,7 @@
         echo("</table>\n");
     }
     catch (PDOException $e){
-        handle_sql_errors($e->getMessage());
+        handle_sql_errors($e);
     }
 
     close();

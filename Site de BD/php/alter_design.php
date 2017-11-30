@@ -28,7 +28,7 @@
         $prepared->execute();
     }
     catch (PDOException $e){
-        handle_sql_errors($e->getMessage());
+        handle_sql_errors($e);
     }
 
     header('Location: /~ist425918/Index.php');
