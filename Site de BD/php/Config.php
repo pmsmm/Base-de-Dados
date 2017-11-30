@@ -10,8 +10,12 @@
     function handle_sql_errors($error_message)
     {
         echo $error_message;
-        echo '<form action="/~ist425918/Index.php">
-                            <input type="submit" value="Home" />
-                            </form>';
+        echo '<div class="jumbotron" style="text-align: center; background: transparent;">
+                <h1>Oh Não, Ocorreu um erro!</h1>
+                <p style="color: white;">'+$error_message+'</p>
+              </div>
+              <form action="/~ist425918/Index.php">
+                <input type="submit" value="Home" />
+              </form>';
     }
 ?>
