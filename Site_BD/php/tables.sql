@@ -15,17 +15,17 @@ drop table reposicao cascade;
 
 CREATE TABLE categoria(
 	nome varchar(64) NOT NULL unique,
-	PRIMARY KEY(nome)); 
+	PRIMARY KEY (nome)); 
 
 CREATE TABLE categoria_simples(
 	nome char(64) NOT NULL,
 	PRIMARY KEY (nome),
-	FOREIGN KEY(nome) references categoria (nome) on delete cascade);
+	FOREIGN KEY (nome) REFERENCES categoria (nome) ON DELETE CASCADE);
 
 CREATE TABLE super_categoria(
 	nome char(64) NOT NULL,
 	PRIMARY KEY (nome),
-	FOREIGN KEY (nome) references categoria(nome) on delete cascade);
+	FOREIGN KEY (nome) REFERENCES categoria(nome) ON DELETE CASCADE);
 
 
 
@@ -33,14 +33,15 @@ CREATE TABLE constituida(
 	super_categoria char(64) NOT NULL,
 	categoria char(64) NOT NULL,
 	PRIMARY KEY (super_categoria, categoria),
-	FOREIGN KEY (super_categoria) REFERENCES super_categoria(nome) on delete cascade,
-	FOREIGN KEY (categoria) REFERENCES categoria(nome)on delete cascade);
+	FOREIGN KEY (super_categoria) REFERENCES super_categoria(nome) ON DELETE CASCADE,
+	FOREIGN KEY (categoria) REFERENCES categoria(nome) ON DELETE CASCADE);
+	CONSTRAINT 
 
 CREATE TABLE fornecedor(
 	nif numeric(9) NOT NULL unique,
 	nome char(64) NOT NULL,
-	PRIMARY KEY(nif),
-	CONSTRAINT nif_tamanho CHECK (nif >= 100000000)); 
+	PRIMARY KEY (nif),
+	CONSTRAINT nif_tamanho CHECK (nif >= 100000000));
 
 	
 CREATE TABLE produto(
@@ -49,8 +50,8 @@ CREATE TABLE produto(
 	categoria char(64) NOT NULL,
 	forn_primario numeric(9),
 	data date NOT NULL,
-	PRIMARY KEY(ean),
-	FOREIGN KEY(forn_primario) references fornecedor(nif),
+	PRIMARY KEY (ean),
+	FOREIGN KEY (forn_primario) REFERENCES fornecedor(nif),
 	CONSTRAINT ean_tamanho CHECK (ean >=1000000000000),
 	CONSTRAINT nif_tamanho CHECK (forn_primario >= 100000000)); 
  
@@ -59,13 +60,13 @@ CREATE TABLE fornece_sec(
 	nif numeric(9) NOT NULL,
 	ean numeric(13) NOT NULL,
 	PRIMARY KEY (nif, ean),
-	FOREIGN KEY (nif) references fornecedor(nif),
-	FOREIGN KEY(ean) references produto(ean) on delete cascade);
+	FOREIGN KEY (nif) REFERENCES fornecedor(nif) ON DELETE CASCADE,
+	FOREIGN KEY (ean) REFERENCES produto(ean) ON DELETE CASCADE);
 
 
 CREATE TABLE corredor(
 	nro integer NOT NULL unique,
-	PRIMARY KEY(nro),
+	PRIMARY KEY (nro),
 	largura double precision NOT NULL CHECK (largura >= 0));
 	
 
@@ -73,8 +74,8 @@ CREATE TABLE prateleira(
 	nro integer NOT NULL,
 	lado char(10) NOT NULL,
 	altura varchar(12) NOT NULL ,
-	PRIMARY KEY(nro, lado, altura),
-	FOREIGN KEY(nro) references corredor(nro));
+	PRIMARY KEY (nro, lado, altura),
+	FOREIGN KEY (nro) REFERENCES corredor(nro) ON DELETE CASCADE);
 
 CREATE TABLE planograma(
 	ean numeric(13) NOT NULL,
@@ -85,13 +86,13 @@ CREATE TABLE planograma(
 	unidades integer NOT NULL CHECK (unidades >= 0),
 	loc integer NOT NULL CHECK (loc >= 0),
 	PRIMARY KEY (ean, nro, lado, altura),
-	FOREIGN KEY (nro, lado, altura) REFERENCES prateleira(nro, lado, altura),
-	FOREIGN KEY (ean) REFERENCES produto(ean)on delete cascade);
+	FOREIGN KEY (nro, lado, altura) REFERENCES prateleira(nro, lado, altura) ON DELETE CASCADE,
+	FOREIGN KEY (ean) REFERENCES produto(ean) ON DELETE CASCADE);
 
 CREATE TABLE evento_reposicao(
 	operador varchar(64) NOT NULL,
 	instante date NOT NULL,
-	PRIMARY KEY(operador, instante));
+	PRIMARY KEY (operador, instante));
 
 
 CREATE TABLE reposicao(
@@ -102,6 +103,6 @@ CREATE TABLE reposicao(
 	operador char(64) NOT NULL,
 	instante date NOT NULL,
 	unidades integer CHECK (unidades >= 0),
-	PRIMARY KEY (ean , nro, lado, altura, operador, instante),
-	FOREIGN KEY (operador, instante) REFERENCES evento_reposicao(operador, instante),
-	FOREIGN KEY (ean, nro, lado, altura) REFERENCES planograma(ean, nro, lado, altura)on delete cascade);
+	PRIMARY KEY (ean, nro, lado, altura, operador, instante),
+	FOREIGN KEY (operador, instante) REFERENCES evento_reposicao(operador, instante) ON DELETE CASCADE,
+	FOREIGN KEY (ean, nro, lado, altura) REFERENCES planograma(ean, nro, lado, altura) ON DELETE CASCADE);

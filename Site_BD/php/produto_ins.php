@@ -88,7 +88,7 @@
         }
         echo "1";
 
-        $prepared=$db->prepare("SELECT categoria FROM public.categoria WHERE nome = :categoria;");
+        $prepared=$db->prepare("SELECT nome FROM public.categoria WHERE nome = :categoria;");
         $prepared->bindParam(':categoria', $categoria, PDO::PARAM_STR);
         $prepared->execute();
         $result = $prepared->fetchAll();

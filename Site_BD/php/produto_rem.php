@@ -34,13 +34,26 @@
 
         echo "comecei transacao";
 
-        $prepared=$db->prepare("DELETE FROM  public.produto WHERE ean = :ean;");
- 		$prepared->bindParam(':ean', $ean, PDO::PARAM_INT);
-        $prepared->execute();
+        $prepared1=$db->prepare("DELETE FROM public.reposicao WHERE ean = :ean;");
+        $prepared2=$db->prepare("DELETE FROM public.planograma WHERE ean = :ean;");
+        $prepared3=$db->prepare("DELETE FROM public.fornece_sec WHERE ean = :ean;");
+        $prepared4=$db->prepare("DELETE FROM public.produto WHERE ean = :ean;");
+
+ 		$prepared1->bindParam(':ean', $ean, PDO::PARAM_INT);
+        $prepared2->bindParam(':ean', $ean, PDO::PARAM_INT);
+        $prepared3->bindParam(':ean', $ean, PDO::PARAM_INT);
+        $prepared4->bindParam(':ean', $ean, PDO::PARAM_INT);
+
+        echo "Deu?";
+        $prepared1->execute();
+        $prepared2->execute();
+        $prepared3->execute();
+        $prepared4->execute();
+        echo "Deu!";
 
         $db->commit();
 
-        echo "FUCKING MADE IT <3";
+        echo "Sucesso!";
 
     }
     catch (PDOException $e){
