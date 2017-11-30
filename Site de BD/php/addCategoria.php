@@ -95,9 +95,6 @@ try{
 
         $var2=strtolower($_POST['sub_categoria_name']);
 
-        echo $var2;
-        echo 'ENTREI ONDE DEVIA PORRA';
-
         try{
             $db->beginTransaction();
 

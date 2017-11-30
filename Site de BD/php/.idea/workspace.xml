@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a6a87c94-364c-4f18-a6f9-cf374b25359f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/alter_design.php" afterPath="$PROJECT_DIR$/alter_design.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/constituida_ins.php" afterPath="$PROJECT_DIR$/constituida_ins.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/listar_cats.php" afterPath="$PROJECT_DIR$/listar_cats.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/listar_repo.php" afterPath="$PROJECT_DIR$/listar_repo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/produto_ins.php" afterPath="$PROJECT_DIR$/produto_ins.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rem_cat_simp.php" afterPath="$PROJECT_DIR$/rem_cat_simp.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/rem_sup_cat.php" afterPath="$PROJECT_DIR$/rem_sup_cat.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/addCategoria.php" afterPath="$PROJECT_DIR$/addCategoria.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,21 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="addCategoria.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="addCategoria.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/addCategoria.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2709">
-              <caret line="132" column="24" lean-forward="false" selection-start-line="132" selection-start-column="24" selection-end-line="132" selection-end-column="24" />
+            <state relative-caret-position="452">
+              <caret line="95" column="55" lean-forward="false" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1512034080658" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
-                <marker date="1512034080658" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
-                <marker date="1512034080658" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
-                <marker date="1512034080658" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
-                <marker date="1512034080658" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
-                <marker date="1512034080658" expanded="true" signature="3160:3215" ph="INSERT INTO public.categoria... " />
-                <marker date="1512034080658" expanded="true" signature="3555:3617" ph="INSERT INTO public.categoriasimples... " />
-                <marker date="1512034080658" expanded="true" signature="3973:4048" ph="..." />
+                <marker date="1512034838491" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
+                <marker date="1512034838491" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
+                <marker date="1512034838491" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
+                <marker date="1512034838491" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
+                <marker date="1512034838491" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
+                <marker date="1512034838491" expanded="true" signature="3099:3154" ph="INSERT INTO public.categoria... " />
+                <marker date="1512034838491" expanded="true" signature="3494:3556" ph="INSERT INTO public.categoriasimples... " />
+                <marker date="1512034838491" expanded="true" signature="3912:3987" ph="..." />
               </folding>
             </state>
           </provider>
@@ -146,7 +140,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rem_sup_cat.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rem_sup_cat.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/rem_sup_cat.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
@@ -174,7 +168,6 @@
         <option value="$PROJECT_DIR$/addSubcategoria.php" />
         <option value="$PROJECT_DIR$/What.php" />
         <option value="$PROJECT_DIR$/teste.php" />
-        <option value="$PROJECT_DIR$/addCategoria.php" />
         <option value="$PROJECT_DIR$/Config.php" />
         <option value="$PROJECT_DIR$/alter_design.php" />
         <option value="$PROJECT_DIR$/constituida_ins.php" />
@@ -183,6 +176,7 @@
         <option value="$PROJECT_DIR$/produto_ins.php" />
         <option value="$PROJECT_DIR$/rem_cat_simp.php" />
         <option value="$PROJECT_DIR$/rem_sup_cat.php" />
+        <option value="$PROJECT_DIR$/addCategoria.php" />
       </list>
     </option>
   </component>
@@ -282,7 +276,7 @@
       <workItem from="1511905388888" duration="11141000" />
       <workItem from="1511972938486" duration="100000" />
       <workItem from="1511980748589" duration="14785000" />
-      <workItem from="1512031823069" duration="2856000" />
+      <workItem from="1512031823069" duration="3051000" />
     </task>
     <task id="LOCAL-00001" summary="Verificação de erros passada para o PHP (Incompleta)">
       <created>1511906805646</created>
@@ -382,11 +376,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512034530068</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Correções Funcionais">
+      <created>1512034706942</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1512034706942</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76669000" />
+    <option name="totallyTimeSpent" value="76864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -444,7 +445,8 @@
     <MESSAGE value="AddCategoria 100%" />
     <MESSAGE value="Alterações Finais ao AddCategoria (em principio)" />
     <MESSAGE value="Especificação de erros e alterações à função" />
-    <option name="LAST_COMMIT_MESSAGE" value="Especificação de erros e alterações à função" />
+    <MESSAGE value="Correções Funcionais" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correções Funcionais" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -457,14 +459,14 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1512034080658" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
-            <marker date="1512034080658" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
-            <marker date="1512034080658" expanded="true" signature="3160:3215" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="3555:3617" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="3973:4048" ph="..." />
+            <marker date="1512034838491" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
+            <marker date="1512034838491" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
+            <marker date="1512034838491" expanded="true" signature="3099:3154" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="3494:3556" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="3912:3987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -503,14 +505,14 @@
           <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1512034080658" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
-            <marker date="1512034080658" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
-            <marker date="1512034080658" expanded="true" signature="3160:3215" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="3555:3617" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="3973:4048" ph="..." />
+            <marker date="1512034838491" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
+            <marker date="1512034838491" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
+            <marker date="1512034838491" expanded="true" signature="3099:3154" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="3494:3556" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="3912:3987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -623,14 +625,14 @@
           <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1512034080658" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
-            <marker date="1512034080658" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
-            <marker date="1512034080658" expanded="true" signature="3160:3215" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="3555:3617" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="3973:4048" ph="..." />
+            <marker date="1512034838491" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
+            <marker date="1512034838491" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
+            <marker date="1512034838491" expanded="true" signature="3099:3154" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="3494:3556" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="3912:3987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -727,14 +729,14 @@
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="33" selection-end-column="10" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1512034080658" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
-            <marker date="1512034080658" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
-            <marker date="1512034080658" expanded="true" signature="3160:3215" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="3555:3617" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="3973:4048" ph="..." />
+            <marker date="1512034838491" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
+            <marker date="1512034838491" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
+            <marker date="1512034838491" expanded="true" signature="3099:3154" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="3494:3556" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="3912:3987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -791,14 +793,14 @@
           <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1512034080658" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
-            <marker date="1512034080658" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
-            <marker date="1512034080658" expanded="true" signature="3160:3215" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="3555:3617" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="3973:4048" ph="..." />
+            <marker date="1512034838491" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
+            <marker date="1512034838491" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
+            <marker date="1512034838491" expanded="true" signature="3099:3154" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="3494:3556" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="3912:3987" ph="..." />
           </folding>
         </state>
       </provider>
@@ -867,24 +869,6 @@
           <folding>
             <marker date="1511981833024" expanded="true" signature="249:308" ph="INSERT INTO public.categoria... " />
             <marker date="1511981833024" expanded="true" signature="348:414" ph="INSERT INTO public.categoriasimples... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addCategoria.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2709">
-          <caret line="132" column="24" lean-forward="false" selection-start-line="132" selection-start-column="24" selection-end-line="132" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1512034080658" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
-            <marker date="1512034080658" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
-            <marker date="1512034080658" expanded="true" signature="3160:3215" ph="INSERT INTO public.categoria... " />
-            <marker date="1512034080658" expanded="true" signature="3555:3617" ph="INSERT INTO public.categoriasimples... " />
-            <marker date="1512034080658" expanded="true" signature="3973:4048" ph="..." />
           </folding>
         </state>
       </provider>
@@ -976,6 +960,24 @@
           <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
           <folding>
             <marker date="1512034690695" expanded="true" signature="166:224" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addCategoria.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="95" column="55" lean-forward="false" selection-start-line="95" selection-start-column="55" selection-end-line="95" selection-end-column="55" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1512034838491" expanded="true" signature="1091:1146" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1485:1540" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="1880:1940" ph="INSERT INTO public.supercategoria... " />
+            <marker date="1512034838491" expanded="true" signature="1985:2047" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="2498:2548" ph="INSERT INTO public.constituida... " />
+            <marker date="1512034838491" expanded="true" signature="3099:3154" ph="INSERT INTO public.categoria... " />
+            <marker date="1512034838491" expanded="true" signature="3494:3556" ph="INSERT INTO public.categoriasimples... " />
+            <marker date="1512034838491" expanded="true" signature="3912:3987" ph="..." />
           </folding>
         </state>
       </provider>
