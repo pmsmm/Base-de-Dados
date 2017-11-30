@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Erro</title>
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -38,7 +39,7 @@ try{
             $db->commit();
         }catch (PDOException $e){
             $db->rollBack();
-            handle_sql_errors($e->getMessage());
+            handle_sql_errors($e);
         }
 
         try{
@@ -53,7 +54,7 @@ try{
             $db->commit();
         }catch(PDOException $e){
             $db->rollBack();
-            handle_sql_errors($e->getMessage());
+            handle_sql_errors($e);
         }
 
         try{
@@ -71,7 +72,7 @@ try{
             $db->commit();
         }catch(PDOException $e){
             $db->rollBack();
-            handle_sql_errors($e->getMessage());
+            handle_sql_errors($e);
         }
 
         try{
@@ -87,7 +88,7 @@ try{
             $db->commit();
         }catch (PDOException $e){
             $db->rollBack();
-            handle_sql_errors($e->getMessage());
+            handle_sql_errors($e);
         }
     }
     if (isset($_POST['sub_categoria_name']) and empty($_POST['categoria_name'])){
@@ -109,7 +110,7 @@ try{
             $db->commit();
         }catch (PDOException $e){
             $db->rollBack();
-            handle_sql_errors($e->getMessage());
+            handle_sql_errors($e);
         }
 
         try{
@@ -124,17 +125,21 @@ try{
             $db->commit();
         }catch (PDOException $e){
             $db->rollBack();
-            handle_sql_errors($e->getMessage());
+            handle_sql_errors($e);
         }
     }
 }
 catch(PDOException $e){
-    handle_sql_errors($e->getMessage());
+    handle_sql_errors($e);
 }
 
-header('Location: /~ist425918/Index.php');
-close();
-die();
+echo '<form action="/~ist425918/Index.php">
+                <input type="submit" value="Home" />
+              </form>';
+
+//header('Location: /~ist425918/Index.php');
+//close();
+//die();
 
 ?>
 </body>

@@ -7,15 +7,15 @@
 	$db = new PDO("pgsql:host=" . $host. ";dbname=".$dbname."", $user, $password);
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    function handle_sql_errors($error_message)
+    function handle_sql_errors(PDOException $error)
     {
-        echo $error_message;
-        echo '<div class="jumbotron" style="text-align: center; background: transparent;">
+        if($error->getCode() == 23505){
+            echo '<div style="text-align: center; background: transparent;">
                 <h1>Oh Não, Ocorreu um erro!</h1>
-                <p style="color: white;">'+$error_message+'</p>
-              </div>
-              <form action="/~ist425918/Index.php">
-                <input type="submit" value="Home" />
-              </form>';
+                <p style="color: white; text-align: left;">';
+            echo 'Um ou mais valores que está a tentar introduzir já se encontram na base de dados!';
+            echo '</p>
+              </div>';
+        }
     }
 ?>
