@@ -52,7 +52,7 @@
 
 				<div style="margin-top: 20px;">
 
-					<form style="display: inline-block;" action="/~ist425918/php/alter_design.php" method="post">
+					<form style="display: inline-block;" action="alter_design.php" method="post">
 						<input type="number" name="ean" placeholder="Insira o EAN do Produto a Alterar:" style="margin-top: 15px;" id="ean_id">
 						<input type="text" name="ean_design" placeholder="Insira a Nova Designação:" style="margin-top: 15px;" id="design_id">
 						<button>Enter</button>
@@ -91,7 +91,8 @@
 			</div>
 
 			<div class="col-lg-4">
-				<form action="/~ist425918/php/produto_ins.php" method="post" style="display: inline-block;">
+				<h2>Adicionar produto</h2>
+				<form action="produto_ins.php" method="post" style="display: inline-block;">
 					<input type="number" id="campo1" name="ean_ins" placeholder="Insira o EAN do Produto:">
 					<br>
 					<input type="text" id="campo2" name="design_ins" placeholder="Insira a Designação do Produto:">
@@ -104,11 +105,16 @@
 					<br>
 					<input type="number" id="campo6" name="nifs_ins" placeholder="Insira o(s) Fornecedor(es) Secundário(s):">
 					<br>
-					<div style="text-align: center; margin-right: 70px; margin-top: 10px;">
+					<div style="text-align: center; margin-right: 110px; margin-top: 10px;">
 						<button style="margin-right: 10px;">Adicionar</button>
-						<button style="margin-left: 10px;">Remover</button>
+						<!--<button style="margin-left: 10px;">Remover</button>-->
 					</div>
 				</form>
+				<h3>Remover produto</h3>
+       			<form action="produto_rem.php" method="post">
+            		<input type="number" name="ean" placeholder="Insira o ean:">
+            		<br><input type="submit" value="Submit"/></br>
+        		</form>
 			</div>
 		</div>
 	</div>
