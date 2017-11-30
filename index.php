@@ -29,29 +29,27 @@
 
 			<div class="col-lg-4" style="text-align: center;">
 
-				<form action="/~ist425918/php/addCategoria.php" method = "post" style="display: inline-block; margin-top;">
-					<input type="text" id="categoria" name="supercategoria_name" placeholder="Nome da Super-Categoria a Adicionar..." style="width: 270px;">
-					<button>Enter</button>
+				<h1>Adicionar categorias e subcategorias </h1>
+				<form action="add_cat_e_sub.php" method = "post" style="display: inline-block; margin-top;">
+					<input type="text" id="categoria" name="supercategoria" placeholder="Nome da Super-Categoria a Adicionar..." style="width: 270px;">
+					<p><input type="text" placeholder="Nome da Categoria-Simples a Adicionar..." id="sub_categoria" name="categoria" style="width: 270px;"></p>
+					<p><input type="submit" value="Submit"/></p>
+					<p>
 				</form>
 
-				<br>
-
-				<form action="/~ist425918/php/addCategoria.php" method = "post" style="display: inline-block; margin-top: 15px;">
-					<input type="text" placeholder="Nome da Categoria-Simples a Adicionar..." id="sub_categoria" name="categoria_name" style="width: 270px;">
-					<button>Enter</button>
-				</form>
-
-				<br>
 			
-				<form action="/~ist425918/php/rmCategoria.php" method = "post" style="display: inline-block; margin-top: 15px;">
-					<input type="text" name="rm_categoria" placeholder="Nome da categoria a remover ..." id="parametro" style="width: 270px;">
+				<p>Remover categoria/subcategoria </p>
+				<form action="rmCategoria.php" method = "post" style="display: inline-block; margin-top: 15px;">
+					<p><input type="text" name="rm_categoria" placeholder="Nome da categoria a remover ..." id="parametro" style="width: 270px;"></p>
 					<button>Enter</button>
 				</form>
 
+				<br>
 				<br>
 
 				<div style="margin-top: 20px;">
 
+					<h6>Alterar designacao produto </h6>
 					<form style="display: inline-block;" action="alter_design.php" method="post">
 						<input type="number" name="ean" placeholder="Insira o EAN do Produto a Alterar:" style="margin-top: 15px;" id="ean_id">
 						<input type="text" name="ean_design" placeholder="Insira a Nova Designação:" style="margin-top: 15px;" id="design_id">
@@ -72,14 +70,12 @@
 
 				<div style="margin-top: 20px;">
 
-					<p>Listar eventos reposicao produto</p>
+					<h1>Listar eventos reposicao </h1>
 					<form action="listar_repo.php" method="post" style="display: inline-flex;">					
 						<input type="text" name="ean" placeholder="Inserir o Nome do Produto a Listar:">
 						<button>Enter</button>
 					</form>
-
-					<p>
-					<p>Listar subcatgeorias de superCategoria</p>
+					<h4>Listar subcatgeorias de superCategoria</h4>
 					<form action="listar_cats.php" method="post" style="display: inline-flex; margin-top: 20px;">					
 						<input type="text" name="super_categoria" placeholder="Inserir o Nome da Super-Categoria a Listar:">
 						<button>Enter</button>
