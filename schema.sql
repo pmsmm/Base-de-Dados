@@ -39,7 +39,7 @@ CREATE TABLE constituida(
 CREATE TABLE fornecedor(
 	nif numeric(9) NOT NULL unique,
 	nome char(64) NOT NULL,
-	PRIMARY KEY(nif),
+	PRIMARY KEY(nif));
 	
 
 	
@@ -51,7 +51,7 @@ CREATE TABLE produto(
 	data date NOT NULL,
 	PRIMARY KEY(ean),
 	FOREIGN KEY(categoria) REFERENCES categoria(nome) on delete set null,
-	FOREIGN KEY(forn_primario) references fornecedor(nif),
+	FOREIGN KEY(forn_primario) references fornecedor(nif));
 
 
 CREATE TABLE fornece_sec(
