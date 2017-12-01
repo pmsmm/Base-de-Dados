@@ -7,7 +7,7 @@
 
     $super_categoria = $_POST['super_categoria'];
     $categoria = $_REQUEST['categoria'];
-    echo("<p>$categoria<p>");
+   
     
     if((!isset($super_categoria) || empty($super_categoria)) && (!isset($categoria) || empty($categoria))) {
         echo "Nome da Super Categoria a Listar em Falta";
