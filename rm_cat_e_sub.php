@@ -6,7 +6,8 @@
 	echo("<p>$categoria<p>");
 
 	if( (!isset($categoria)) || empty($categoria)){
-		echo 'Insira uma categoria';	
+		echo 'Insira uma categoria';
+		die();	
 	}
 
 	try
