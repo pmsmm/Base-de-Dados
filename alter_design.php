@@ -29,6 +29,8 @@
         $prepared->bindParam(':designacao', $var2, PDO::PARAM_STR);
         $prepared->execute();
 
+        echo "operacao realizada com sucesso";
+
     }
     catch (PDOException $e){
         handle_sql_errors($e->getMessage());

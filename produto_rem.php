@@ -29,6 +29,8 @@
  		$prepared->bindParam(':ean', $ean, PDO::PARAM_INT);
         $prepared->execute();
 
+        echo "operacao realizada com sucesso";
+
         $db->commit();
 
     }

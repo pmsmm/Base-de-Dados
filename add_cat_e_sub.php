@@ -42,6 +42,8 @@ try
             $statement->bindParam(':cat_simples', $categoria, PDO::PARAM_STR);
             $statement->execute();
 
+            echo "operacao realizada com sucesso";
+
          
 
         }
@@ -92,6 +94,8 @@ try
             $statement->bindParam(':super_categoria', $supercategoria, PDO::PARAM_STR);
             $statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
 			$statement->execute();
+
+            echo "operacao realizada com sucesso";
             
         
         	
@@ -118,6 +122,8 @@ try
             	$statement->bindParam(':super_categoria', $supercategoria, PDO::PARAM_STR);
             	$statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
 				$statement->execute();
+
+                echo "operacao realizada com sucesso";
             	
            
             }
@@ -138,6 +144,8 @@ try
             	$statement->bindParam(':super_categoria', $supercategoria, PDO::PARAM_STR);
             	$statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
 				$statement->execute();
+
+                echo "operacao realizada com sucesso";
             	
             	
             }
@@ -172,6 +180,8 @@ try
             	$statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
                 $statement->execute();
 
+                echo "operacao realizada com sucesso";
+
         	}
         	
         }
@@ -193,6 +203,8 @@ try
                 $statement->bindParam(':super_categoria', $supercategoria, PDO::PARAM_STR);
                 $statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
                 $statement->execute();
+
+                echo "operacao realizada com sucesso";
 
             }
 

@@ -108,6 +108,7 @@
         $prepared = $db->prepare("INSERT INTO public.produto VALUES (:ean, :designacao, :categoria, :nif_primario, :data_primario);");
         $statement = $db->prepare("INSERT INTO public.fornece_sec VALUES (:nif_sec, :ean_sec);");
        
+
         $prepared->bindParam(':ean', $ean, PDO::PARAM_INT);
         $prepared->bindParam(':designacao', $design, PDO::PARAM_STR);
         $prepared->bindParam(':categoria',$categoria , PDO::PARAM_STR);
@@ -125,6 +126,8 @@
        	}
  
         $db->commit();
+
+        echo "operacao realizada com sucesso";
       
     }
     catch (PDOException $e){
