@@ -46,10 +46,11 @@ CREATE TABLE fornecedor(
 CREATE TABLE produto(
 	ean numeric(13) NOT NULL unique,
 	design char(128) NOT NULL,
-	categoria char(64) NOT NULL,
+	categoria char(64) ,
 	forn_primario numeric(9),
 	data date NOT NULL,
 	PRIMARY KEY(ean),
+	FOREIGN KEY(categoria) REFERENCES categoria(nome) on delete set null,
 	FOREIGN KEY(forn_primario) references fornecedor(nif),
 	CONSTRAINT ean_tamanho CHECK (ean >=1000000000000),
 	CONSTRAINT nif_tamanho CHECK (forn_primario >= 100000000)); 
