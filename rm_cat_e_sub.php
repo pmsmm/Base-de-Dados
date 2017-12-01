@@ -62,6 +62,10 @@
 				$statement = $db->prepare("DELETE FROM public.categoria  WHERE nome= :categoria;");
             	$statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
             	$statement->execute();
+
+            	echo "operacao realizada com sucesso";
+
+
 			}
 			else{
 				echo" Nao pode apagar categoria(filha unica)";
