@@ -20,7 +20,7 @@ try
         
     
 
-	if( (  (!isset($supercategoria)) || empty($supercategoria) ) && (!empty($categoria))   ){
+	if(((!isset($supercategoria)) || empty($supercategoria)) && (!empty($categoria))){
 
 
        
@@ -42,8 +42,7 @@ try
             $statement->bindParam(':cat_simples', $categoria, PDO::PARAM_STR);
             $statement->execute();
 
-            
-            //die();
+         
 
         }
 	}
@@ -94,8 +93,7 @@ try
             $statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
 			$statement->execute();
             
-            //die();
-
+        
         	
         }
         //se existe super mas nao existe sub
@@ -121,8 +119,7 @@ try
             	$statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
 				$statement->execute();
             	
-            	//die();
-
+           
             }
 			//está no sistema e é sub
             else{
@@ -142,7 +139,7 @@ try
             	$statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
 				$statement->execute();
             	
-            	//die();
+            	
             }
 
         }
@@ -174,9 +171,6 @@ try
             	$statement->bindParam(':super_categoria', $supercategoria, PDO::PARAM_STR);
             	$statement->bindParam(':categoria', $categoria, PDO::PARAM_STR);
                 $statement->execute();
-
-            
-            	//die();
 
         	}
         	
@@ -213,7 +207,7 @@ catch (PDOException $e){
     $db->rollBack(); 
     echo("<p>ERROR: {$e->getMessage()}</p>");
 }
-    //header('Location: /ist425911/index.php');
+    
     echo '<form action="/ist425911/index.php">
                         <input type="submit" value="Home" />
                         </form>';
