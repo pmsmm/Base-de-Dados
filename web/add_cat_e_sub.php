@@ -14,6 +14,11 @@ if( (!isset($categoria) || empty($categoria)) && (!empty($supercategoria))){
         die();
 }
 
+if($categoria == $supercategoria){
+    echo "categorias nao podem ser iguais";
+    die();
+}
+
 try
 {
     include("Config.php");
@@ -73,6 +78,7 @@ try
 
         //se nao existe super nem sub
         if((!$global) && (!$global1)){
+
 
         	$prepared = $db->prepare("INSERT INTO public.categoria VALUES (:categoria);");
             $prepared->bindParam(':categoria', $categoria, PDO::PARAM_STR);
